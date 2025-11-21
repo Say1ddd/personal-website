@@ -1,3 +1,21 @@
+:root {
+  --color-primary: #fdfd1f;
+  --color-secondary: #ababab;
+
+  --color-deeper: #898989;
+
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+}
+
+html.dark {
+  --color-primary: rgba(34, 187, 255, 1);
+  --color-background: rgba(19, 20, 21, 1);
+  --color-foreground: #ededed;
+
+  color-scheme: dark;
+}
+
 html,
 body,
 #app {
@@ -16,12 +34,38 @@ html.dark {
 }
 
 #nprogress .bar {
-  background: #22bbff;
-  opacity: 0.75;
+  filter: invert();
+  background-image: url('/assets/patterns/texture.svg');
+  background-attachment: fixed;
   position: fixed;
   z-index: 1031;
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 1rem;
+}
+
+/* named transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
