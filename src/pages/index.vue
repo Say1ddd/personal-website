@@ -20,7 +20,7 @@ useHead({
   <div h="full" overflow="x-hidden y-scroll" snap="y mandatory">
     <section snap="always center" h="full">
       <h1>home page</h1>
-      <button btn @click="toAbout">
+      <button id="about" btn @click="toAbout">
         <div i-carbon-border-full />
       </button>
     </section>
