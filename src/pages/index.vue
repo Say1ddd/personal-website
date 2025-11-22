@@ -17,15 +17,17 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <h1>Home Page</h1>
-    <button btn @click="toAbout">
-      <div i-carbon-border-full />
-    </button>
+  <div h="full" overflow="x-hidden y-scroll" snap="y mandatory">
+    <section snap="always center" h="full">
+      <h1>home page</h1>
+      <button btn @click="toAbout">
+        <div i-carbon-border-full />
+      </button>
+    </section>
   </div>
 </template>
 
 <route lang="yaml">
 meta:
-  layout: home
+  layout: default
 </route>

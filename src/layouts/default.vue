@@ -1,11 +1,31 @@
 <template>
-  <main
-    px-4 py-10
-    text="center gray-700 dark:gray-200"
-  >
-    <RouterView />
-    <div text-sm mx-auto mt-5 text-center opacity-50>
-      [Default Layout]
+  <main>
+    <div class="wrapper" m="8" flex="1">
+      <RouterView v-slot="{ Component, route }">
+        <Transition name="fade" mode="out-in">
+          <component :is="Component" :key="route.path" />
+        </Transition>
+      </RouterView>
     </div>
   </main>
 </template>
+
+<style scoped>
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-width: 0;
+  scroll-snap-type: y mandatory;
+  flex: auto;
+  background-color: var(--color-background);
+  background-image: url('/assets/patterns/topography.svg');
+}
+
+main div.wrapper {
+  background-color: var(--color-background);
+  -webkit-box-shadow: 0 0 1rem 1rem var(--color-background);
+  -moz-box-shadow: 0 0 1rem 1rem var(--color-background);
+  box-shadow: 0 0 1rem 1rem var(--color-background);
+}
+</style>
