@@ -12,8 +12,7 @@ context('Basic', () => {
 
     cy.get('#about')
       .click()
-
-    cy.url()
+      .url()
       .should('eq', 'http://localhost:3333/about')
   })
 })
