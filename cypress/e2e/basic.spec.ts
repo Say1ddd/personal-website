@@ -3,16 +3,19 @@ context('Basic', () => {
     cy.visit('/')
   })
 
-  it('basic nav', () => {
+  it('is in home', () => {
     cy.url()
       .should('eq', 'http://localhost:3333/')
 
     cy.contains('home page')
       .should('exist')
+  })
 
+  it('basic nav', () => {
     cy.get('#about')
       .click()
-      .url()
+
+    cy.url()
       .should('eq', 'http://localhost:3333/about')
   })
 })
