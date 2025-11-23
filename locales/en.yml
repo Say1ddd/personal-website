@@ -6,3 +6,40 @@ button:
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 not-found: Not found
+footer:
+  nav:
+    _label: Navigation
+    home: Homepage
+    about: About
+    resume: Resume
+  misc: Miscellaneous
+
+# content
+home:
+  section_1: I believe that ideas in the form of code, design, and curiosity can build products that benefit everyone
+  section_2:
+    title: What I've been working on recently
+    subtitle: And many more
+
+about:
+  title: Full stack developer with experience in website development using various framework and libraries
+  subtitle: Able to build interactive, responsive web applications, and providing optimal performance to maximize user experiences
+  sections:
+    - _label: Honor
+      items:
+        - title: Kemendikdasmen
+          subtitle: Regional LKS Web Technology 2024
+
+    - _label: Service
+      items:
+        - title: Development
+          subtitle: [Technical Direction, Front-end Development, Development Consulting]
+
+    - _label: Profile
+      items:
+        - title: Identity
+          subtitle:
+            - Sajid Muhammad Ikhlas
+            - Yogyakarta, Indonesia
+        - title: Capability
+          subtitle: [Problem Solving, Decision Making, Easy to Adapt]

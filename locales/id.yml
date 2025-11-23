@@ -6,3 +6,40 @@ button:
   toggle_dark: Ubah ke mode gelap
   toggle_langs: Ubah bahasa
 not-found: Tidak ditemukan
+footer:
+  nav:
+    _label: Navigasi
+    home: Beranda
+    about: Tentang
+    resume: Resume
+  misc: Lain-lain
+
+# content
+home:
+  section_1: Aku percaya bahwa ide berupa code, desain, dan rasa ingin tahu mampu menciptakan produk yang bermanfaat untuk semua
+  section_2:
+    title: Karya yang sedang kukerjakan baru-baru ini
+    subtitle: Dan masih banyak lagi
+
+about:
+  title: Full stack developer yang memiliki pengalaman pengembangan website menggunakan berbagai macam framework dan library
+  subtitle: Mampu mengembangkan aplikasi web yang interaktif, responsif, dan memberikan performa yang optimal untuk memaksimalkan pengalaman pengguna
+  sections:
+    - _label: Penghargaan
+      items:
+        - title: Kemendikdasmen
+          subtitle: LKS Web Technology Tingkat Provinsi 2024
+
+    - _label: Layanan
+      items:
+        - title: Development
+          subtitle: [Arahan Teknis Pengembangan Web, Pengembangan Front-end, Konsultasi Pengembangan Web]
+
+    - _label: Profil
+      items:
+        - title: Identitas
+          subtitle:
+            - Sajid Muhammad Ikhlas
+            - Yogyakarta, Indonesia
+        - title: Keahlian
+          subtitle: [Penyelesaian Masalah, Pengambilan Keputusan, Mudah Beradaptasi]
