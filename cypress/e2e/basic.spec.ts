@@ -12,10 +12,9 @@ context('Basic', () => {
   })
 
   it('basic nav', () => {
-    cy.get('#about')
+    cy.get('[data-test-id="about"]')
       .click()
-
-    cy.url()
+      .url()
       .should('eq', 'http://localhost:3333/about')
   })
 })
