@@ -18,6 +18,7 @@ useHead({
 
 <template>
   <div class="relative" h="full" overflow="x-hidden y-scroll" snap="y mandatory">
+    <h1>Home Page</h1>
     <section snap="always center" h="full">
       <h1>{{ t('home.section_1') }}</h1>
       <button data-test-id="about" btn @click="toAbout">
