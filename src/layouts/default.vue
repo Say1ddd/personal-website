@@ -19,7 +19,7 @@ main {
   scroll-snap-type: y mandatory;
   flex: auto;
   background-color: var(--color-background);
-  background-image: url('/assets/patterns/topography.svg');
+  background-image: url('/assets/patterns/graph-paper.svg');
 }
 
 main div.wrapper {

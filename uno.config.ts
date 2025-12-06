@@ -28,9 +28,9 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'DM Sans',
+        sans: 'Manrope',
         serif: 'DM Serif Display',
-        mono: 'DM Mono',
+        mono: 'JetBrains Mono',
       },
       processors: createLocalFontProcessor(),
     }),
