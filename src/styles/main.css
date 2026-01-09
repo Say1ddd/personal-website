@@ -1,10 +1,11 @@
-:root {
+:root,
+:host {
   --color-primary: #fdfd1f;
   --color-secondary: #ababab;
 
   --color-deeper: #898989;
 
-  --color-background: #ffffff;
+  --color-background: #faffff;
   --color-foreground: #171717;
 }
 
@@ -12,6 +13,7 @@ html.dark {
   --color-primary: rgba(34, 187, 255, 1);
   --color-background: rgba(19, 20, 21, 1);
   --color-foreground: #ededed;
+  --color-subtle: #1e1f20;
 
   color-scheme: dark;
 }
@@ -48,26 +50,48 @@ html.dark {
 /* named transitions */
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.3s ease-out;
+  transform-origin: left;
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
   transform: rotateY(45deg);
-  transform-origin: top right;
+  transform-origin: left;
 }
 
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
+.slide-x-enter-active,
+.slide-x-leave-active {
+  transition:
+    transform 0.3s ease-out,
+    opacity 0.3s ease-in-out;
 }
 
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+.slide-x-enter-from,
+.slide-x-leave-to {
+  transform: translateX(-100%);
 }
 
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
+.slide-x-enter-to,
+.slide-x-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-y-enter-active,
+.slide-y-leave-active {
+  transition: all 0.1s ease;
+}
+
+.slide-y-enter-from {
   opacity: 0;
+  transform: translateY(-100%);
+}
+
+.slide-y-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
 }

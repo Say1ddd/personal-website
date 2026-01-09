@@ -15,9 +15,19 @@ import {
 
 export default defineConfig({
   shortcuts: [
-    ['btn', 'px-4 py-1 rounded inline-block bg-teal-700 text-white cursor-pointer !outline-none hover:bg-teal-800 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
-    ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
+    ['heading-1', 'text-2xl lg:text-4xl md:text-3xl'],
+    ['heading-2', 'text-xl lg:text-3xl md:text-2xl'],
+    ['heading-3', 'text-lg lg:text-2xl md:text-xl'],
+    ['heading-4', 'text-base lg:text-xl md:text-lg'],
   ],
+  theme: {
+    colors: {
+      primary: 'var(--color-primary)',
+      background: 'var(--color-background)',
+      foreground: 'var(--color-foreground)',
+      subtle: 'var(--color-subtle)',
+    },
+  },
   presets: [
     presetWind3,
     presetWind4,
@@ -28,7 +38,7 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'Manrope',
+        manrope: 'Manrope',
         serif: 'DM Serif Display',
         mono: 'JetBrains Mono',
       },
