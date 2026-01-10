@@ -3,10 +3,16 @@ button:
   back: Back
   go: GO
   home: Home
-  toggle_dark: Toggle dark mode
-  toggle_langs: Change languages
+  toggle_theme:
+    _label: Toggle theme
+    dark: Dark
+    light: Light
+  toggle_lang: Change lang
 not-found: Not found
 footer:
+  copy:
+    mit: Source code is licensed under
+    cc: Assets (such as words and images) are licensed under
   nav:
     _label: Navigation
     home: Homepage
@@ -22,18 +28,13 @@ home:
     subtitle: And many more
 
 about:
-  title: Full stack developer with experience in website development using various framework and libraries
-  subtitle: Able to build interactive, responsive web applications, and providing optimal performance to maximize user experiences
+  title: A full stack developer with experience in website development using various framework and libraries
+  subtitle: Able to build interactive, responsive web applications, and providing optimal performance to maximize users experience
   sections:
     - _label: Honor
       items:
         - title: Kemendikdasmen
           subtitle: Regional LKS Web Technology 2024
-
-    - _label: Service
-      items:
-        - title: Development
-          subtitle: [Technical Direction, Front-end Development, Development Consulting]
 
     - _label: Profile
       items:

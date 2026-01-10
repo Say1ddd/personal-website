@@ -3,10 +3,16 @@ button:
   back: Kembali
   go: Pergi
   home: Beranda
-  toggle_dark: Ubah ke mode gelap
-  toggle_langs: Ubah bahasa
+  toggle_theme:
+    _label: Ubah tema
+    dark: Gelap
+    light: Terang
+  toggle_lang: Ubah bahasa
 not-found: Tidak ditemukan
 footer:
+  copy:
+    mit: Source code dilisensikan dalam
+    cc: Aset (seperti kata dan gambar) dilisensikan dalam
   nav:
     _label: Navigasi
     home: Beranda
@@ -22,18 +28,13 @@ home:
     subtitle: Dan masih banyak lagi
 
 about:
-  title: Full stack developer yang memiliki pengalaman pengembangan website menggunakan berbagai macam framework dan library
+  title: Seorang full stack developer yang memiliki pengalaman dalam pengembangan website menggunakan berbagai macam framework dan library
   subtitle: Mampu mengembangkan aplikasi web yang interaktif, responsif, dan memberikan performa yang optimal untuk memaksimalkan pengalaman pengguna
   sections:
     - _label: Penghargaan
       items:
         - title: Kemendikdasmen
           subtitle: LKS Web Technology Tingkat Provinsi 2024
-
-    - _label: Layanan
-      items:
-        - title: Development
-          subtitle: [Arahan Teknis Pengembangan Web, Pengembangan Front-end, Konsultasi Pengembangan Web]
 
     - _label: Profil
       items:
