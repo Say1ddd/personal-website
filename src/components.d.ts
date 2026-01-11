@@ -8,7 +8,12 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    LayoutDivider: typeof import('./components/partials/LayoutDivider.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TheFooter: typeof import('./components/TheFooter.vue')['default']
+    TheHeader: typeof import('./components/TheHeader.vue')['default']
+    ToggleButton: typeof import('./components/partials/ToggleButton.vue')['default']
+    ToggleThemeBtn: typeof import('./components/partials/ToggleThemeBtn.vue')['default']
   }
 }
