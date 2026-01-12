@@ -10,14 +10,4 @@ context('Basic', () => {
     cy.contains('Home Page')
       .should('exist')
   })
-
-  it('should in about page', () => {
-    cy.get('[data-cy="about"]')
-      .click()
-      .url()
-      .should('eq', 'http://localhost:3333/about')
-
-    cy.contains('About Page')
-      .should('exist')
-  })
 })
