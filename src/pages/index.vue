@@ -4,8 +4,8 @@ defineOptions({
 })
 
 const router = useRouter()
-const el = useTemplateRef('el')
 /**
+const el = useTemplateRef('el')
 const { x, y, isScrolling, arrivedState, directions, measure } = useScroll(el)
 const { top: isOnTop, bottom: isOnBottom } = toRefs(arrivedState)
 const { left: toLeft, right: toRight, top: toTop, bottom: toBottom } = toRefs(directions)
@@ -30,7 +30,7 @@ const links = [
 </script>
 
 <template>
-  <div ref="el" class="relative" overflow="x-hidden y-scroll" h="full" snap="y mandatory">
+  <div class="relative" overflow="x-hidden y-scroll" h="full" snap="y mandatory">
     <section class="text-primary px-4 flex justify-between">
       <span>Home Page</span>
       <span>nothing to see here...</span>
@@ -43,7 +43,7 @@ const links = [
       </div>
       <div class="text-right md:text-center">
         <button data-cy="about" p="y-2 x-3" class="text-primary font-bold tracking-widest bg-background w-fit" hover="bg-primary text-black" border="~ r-4 primary" @click="router.push('/about')">
-          ABOUT ME
+          <span>ABOUT ME</span>
         </button>
       </div>
     </section>
