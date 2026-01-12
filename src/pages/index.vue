@@ -32,8 +32,8 @@ const links = [
 <template>
   <div ref="el" class="relative" overflow="x-hidden y-scroll" h="full" snap="y mandatory">
     <section class="text-primary px-4 flex justify-between">
-      <span>Home page</span>
-      <span>nothing to see here</span>
+      <span>Home Page</span>
+      <span>nothing to see here...</span>
     </section>
     <section class="section-divider gap-3 justify-center" p="4" flex="~ col" snap="always center" h="full">
       <div border="l-4 primary" class="pl-4">

@@ -12,7 +12,7 @@ context('Basic', () => {
   })
 
   it('should in about page', () => {
-    cy.get('[data-test-id="about"]')
+    cy.get('[data-cy="about"]')
       .click()
       .url()
       .should('eq', 'http://localhost:3333/about')
