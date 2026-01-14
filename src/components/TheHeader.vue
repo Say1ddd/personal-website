@@ -85,7 +85,7 @@ const socials = [
 
 <template>
   <header class="font-mono flex h-10 items-center justify-between relative">
-    <div class="font-(manrope black) text-4xl tracking-widest select-none relative z-30">
+    <div class="text-4xl font-(black sans) tracking-widest select-none relative z-30">
       FPS {{ fps }}
     </div>
     <div class="underline flex h-full w-30 items-center relative from-foreground/5 to-transparent bg-linear-to-r md:w-80">
