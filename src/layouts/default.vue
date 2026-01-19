@@ -38,8 +38,10 @@ main div.wrapper::before {
 
 main div.wrapper {
   background-color: var(--color-background);
-  //-webkit-box-shadow: 0 0 1rem 1rem var(--color-background);
-  //-moz-box-shadow: 0 0 1rem 1rem var(--color-background);
-  //box-shadow: 0 0 1rem 1rem var(--color-background);
+  /*
+  -webkit-box-shadow: 0 0 1rem 1rem var(--color-background);
+  -moz-box-shadow: 0 0 1rem 1rem var(--color-background);
+  box-shadow: 0 0 1rem 1rem var(--color-background);
+   */
 }
 </style>
