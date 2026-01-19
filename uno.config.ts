@@ -1,7 +1,4 @@
 import {
-  createLocalFontProcessor,
-} from '@unocss/preset-web-fonts/local'
-import {
   defineConfig,
   presetAttributify,
   presetIcons,
@@ -39,10 +36,8 @@ export default defineConfig({
     presetWebFonts({
       fonts: {
         manrope: 'Manrope',
-        serif: 'DM Serif Display',
-        mono: 'JetBrains Mono',
+        jetBMono: 'JetBrains Mono',
       },
-      processors: createLocalFontProcessor(),
     }),
   ],
   transformers: [

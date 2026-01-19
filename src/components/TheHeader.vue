@@ -84,7 +84,7 @@ const socials = [
 </script>
 
 <template>
-  <header class="font-mono flex h-10 items-center justify-between relative">
+  <header class="font-jetBMono flex h-10 items-center justify-between relative">
     <div class="font-(manrope black) text-4xl tracking-widest select-none relative z-30">
       FPS {{ fps }}
     </div>
@@ -106,7 +106,7 @@ const socials = [
     <div v-if="isSidebarOpen" class="sidebar bg-background/50 flex flex-col left-0 top-0 justify-center absolute z-20 overflow-hidden backdrop-blur-lg">
       <div class="wrapper mb-4 mt-14 border-b-4 border-b-primary flex-1">
         <div class="flex flex-col h-full">
-          <ul class="font-black font-mono text-right flex-1">
+          <ul class="font-jetBMono font-black text-right flex-1">
             <li flex="~ col" class="gap-2">
               <span class="font-light w-fit" border="l-4 primary" bg-background p="y-1 x-2">navigation</span>
               <ul>
