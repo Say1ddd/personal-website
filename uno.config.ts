@@ -1,4 +1,7 @@
 import {
+  createLocalFontProcessor,
+} from '@unocss/preset-web-fonts/local'
+import {
   defineConfig,
   presetAttributify,
   presetIcons,
@@ -37,7 +40,11 @@ export default defineConfig({
       fonts: {
         manrope: 'Manrope',
         jetBMono: 'JetBrains Mono',
+        fugazOne: 'Fugaz One',
       },
+      processors: import.meta.env.DEV
+        ? [createLocalFontProcessor()]
+        : undefined,
     }),
   ],
   transformers: [
