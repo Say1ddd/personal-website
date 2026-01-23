@@ -1,19 +1,24 @@
 :root,
 :host {
   --color-primary: #fdfd1f;
-  --color-secondary: #ababab;
-
-  --color-deeper: #898989;
-
   --color-background: #faffff;
   --color-foreground: #171717;
+
+  --image-graph-paper: url('/assets/patterns/graph-paper.svg');
+}
+
+:focus-visible {
+  outline: 1px dashed var(--color-foreground) !important;
+  box-shadow: 6px 6px var(--color-primary);
+  z-index: 10;
 }
 
 html.dark {
   --color-primary: rgba(34, 187, 255, 1);
   --color-background: rgba(19, 20, 21, 1);
   --color-foreground: #ededed;
-  --color-subtle: #1e1f20;
+
+  --image-background: url('/assets/patterns/graph-paper-dark.svg');
 
   color-scheme: dark;
 }
@@ -24,10 +29,11 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  background-image: var(--image-graph-paper);
+  background-color: var(--color-background);
 }
 
 html.dark {
-  background: #121212;
   color-scheme: dark;
 }
 
@@ -36,9 +42,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  filter: invert();
-  background-image: url('/assets/patterns/texture.svg');
-  background-attachment: fixed;
+  background: linear-gradient(135deg, transparent, var(--color-primary));
   position: fixed;
   z-index: 1031;
   top: 0;
