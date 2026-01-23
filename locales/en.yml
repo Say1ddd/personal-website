@@ -2,6 +2,7 @@ button:
   about: About
   back: Back
   go: GO
+  up-next: Up Next
   home: Home
   toggle_theme:
     _label: Toggle theme
@@ -31,11 +32,6 @@ about:
   title: A full stack developer with experience in website development using various framework and libraries
   subtitle: Able to build interactive, responsive web applications, and providing optimal performance to maximize users experience
   sections:
-    - _label: Honor
-      items:
-        - title: Kemendikdasmen
-          subtitle: Regional LKS Web Technology 2024
-
     - _label: Profile
       items:
         - title: Identity
@@ -44,3 +40,17 @@ about:
             - Yogyakarta, Indonesia
         - title: Capability
           subtitle: [Problem Solving, Decision Making, Easy to Adapt]
+
+    - _label: Honor
+      items:
+        - title: Kemendikdasmen
+          subtitle: Regional LKS Web Technology 2024
+
+    - _label: Social
+      items:
+        - title: Instagram
+          subtitle: say1ddd
+        - title: LinkedIn
+          subtitle: /in/sajid-ikhlas
+        - title: Github
+          subtitle: say1ddd
