@@ -74,7 +74,7 @@ const socials = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/sajid-muhammad-ikhlas/',
+    href: 'https://www.linkedin.com/in/sajid-ikhlas/',
   },
   {
     label: 'Github',
@@ -85,15 +85,15 @@ const socials = [
 
 <template>
   <header class="font-jetBMono flex h-10 items-center justify-between relative">
-    <div class="font-(manrope black) text-4xl tracking-widest select-none relative z-30">
+    <div class="font-(manrope black) text-4xl tracking-widest flex-1 select-none relative z-30 from-foreground/5 to-transparent bg-linear-to-l">
       FPS {{ fps }}
     </div>
     <div class="underline flex h-full w-30 items-center relative from-foreground/5 to-transparent bg-linear-to-r md:w-80">
-      <ToggleButton class="flex-1" :state="locale === 'en'" truthy-label="ENG" falsy-label="IDN" @click="toggleLocale">
+      <ToggleButton class="flex-1 hover:bg-primary/10" :state="locale === 'en'" truthy-label="ENG" falsy-label="IDN" @click="toggleLocale">
         <span i-carbon-language block />
         <span class="text-sm font-medium hidden truncate md:block" v-html="t('button.toggle_lang')" />
       </ToggleButton>
-      <ToggleButton class="flex-1" :state="isDark" :truthy-label="t('button.toggle_theme.dark')" :falsy-label="t('button.toggle_theme.light')" @click="toggleDark()">
+      <ToggleButton class="flex-1 hover:bg-primary/10" :state="isDark" :truthy-label="t('button.toggle_theme.dark')" :falsy-label="t('button.toggle_theme.light')" @click="toggleDark()">
         <span block i="carbon-sun dark:carbon-moon" />
         <span class="text-sm font-medium hidden truncate md:block" v-html="t('button.toggle_theme._label')" />
       </ToggleButton>

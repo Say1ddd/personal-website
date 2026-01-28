@@ -2,6 +2,7 @@ button:
   about: Tentang
   back: Kembali
   go: Pergi
+  up-next: Selanjutnya
   home: Beranda
   toggle_theme:
     _label: Ubah tema
@@ -31,11 +32,6 @@ about:
   title: Seorang full stack developer yang memiliki pengalaman dalam pengembangan website menggunakan berbagai macam framework dan library
   subtitle: Mampu mengembangkan aplikasi web yang interaktif, responsif, dan memberikan performa yang optimal untuk memaksimalkan pengalaman pengguna
   sections:
-    - _label: Penghargaan
-      items:
-        - title: Kemendikdasmen
-          subtitle: LKS Web Technology Tingkat Provinsi 2024
-
     - _label: Profil
       items:
         - title: Identitas
@@ -44,3 +40,17 @@ about:
             - Yogyakarta, Indonesia
         - title: Keahlian
           subtitle: [Penyelesaian Masalah, Pengambilan Keputusan, Mudah Beradaptasi]
+
+    - _label: Penghargaan
+      items:
+        - title: Kemendikdasmen
+          subtitle: LKS Web Technology Tingkat Provinsi 2024
+
+    - _label: Sosial
+      items:
+        - title: Instagram
+          subtitle: say1ddd
+        - title: LinkedIn
+          subtitle: /in/sajid-ikhlas
+        - title: Github
+          subtitle: say1ddd

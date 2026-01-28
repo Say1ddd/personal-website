@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     LayoutDivider: typeof import('./components/partials/LayoutDivider.vue')['default']
+    PreviousButton: typeof import('./components/partials/PreviousButton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheHeader: typeof import('./components/TheHeader.vue')['default']

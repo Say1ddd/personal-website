@@ -12,11 +12,11 @@ const {
 </script>
 
 <template>
-  <button :data-state="state" role="button" class="group bottom-line p-2 flex gap-3 h-full truncate items-center overflow-y-clip hover:bg-foreground/5">
+  <button :data-state="state" role="button" class="group bottom-line p-2 flex gap-3 h-full truncate items-center overflow-y-clip">
     <span class="bottom-full bg-primary opacity-0 h-px w-full inline-block pointer-events-none transition-opacity absolute group-hover:opacity-100" />
     <span class="bg-primary opacity-0 h-1.5 w-1 inline-block pointer-events-none transition-opacity top-0 absolute group-hover:opacity-100" />
     <slot />
-    <span class="state-label text-xs text-black bg-primary w-12 truncate shadow transition group-hover:opacity-100 group-hover:rotate-none group-active:scale-90">
+    <span class="state-label text-xs text-black tracking-wide bg-primary w-13 pointer-events-none truncate shadow transition group-hover:opacity-100 group-hover:rotate-none group-active:scale-90">
       <Transition mode="out-in" name="slide-y">
         <span v-if="state">{{ truthyLabel }}</span>
         <span v-else>{{ falsyLabel }}</span>
@@ -29,12 +29,15 @@ const {
 .bottom-line::after {
   content: '';
   position: absolute;
+  z-index: 10;
   top: 100%;
   width: 10rem;
   transform: translateY(2px) scaleX(0);
   height: 6px;
   background-color: var(--color-primary);
   transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  pointer-events: none;
 }
 
 .bottom-line:hover::after {

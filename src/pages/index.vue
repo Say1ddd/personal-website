@@ -24,13 +24,13 @@ const links = [
   },
   {
     slug: 'linkedin',
-    href: 'https://www.linkedin.com/in/sajid-muhammad-ikhlas/',
+    href: 'https://www.linkedin.com/in/sajid-ikhlas/',
   },
 ]
 </script>
 
 <template>
-  <div class="relative" overflow="x-hidden y-scroll" h="full" snap="y mandatory">
+  <div class="bg-background relative" overflow="x-hidden y-auto" h="full" snap="y mandatory" tabindex="0" autofocus>
     <section class="text-primary px-4 flex justify-between">
       <span>Home Page</span>
       <span>nothing to see here...</span>
@@ -98,11 +98,10 @@ const links = [
   position: absolute;
   width: 100%;
   height: 1rem;
-  background-image: url('/assets/patterns/diagonal-lines.svg');
-  filter: invert();
+  mask-image: url('/assets/patterns/diagonal-lines.svg');
+  background: var(--color-foreground);
   top: 0;
   left: 0;
-  background-attachment: fixed;
 }
 </style>
 
