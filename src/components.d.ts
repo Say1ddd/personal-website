@@ -8,10 +8,14 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AboutFooter: typeof import('./components/partials/about/AboutFooter.vue')['default']
+    BackgroundText: typeof import('./components/partials/about/BackgroundText.vue')['default']
+    ExternalIndicator: typeof import('./components/partials/about/ExternalIndicator.vue')['default']
     LayoutDivider: typeof import('./components/partials/LayoutDivider.vue')['default']
     PreviousButton: typeof import('./components/partials/PreviousButton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SocialLink: typeof import('./components/partials/about/SocialLink.vue')['default']
     TheHeader: typeof import('./components/TheHeader.vue')['default']
     ToggleButton: typeof import('./components/partials/ToggleButton.vue')['default']
   }
