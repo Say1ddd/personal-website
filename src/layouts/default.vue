@@ -51,7 +51,7 @@ main {
 
 main div.wrapper::before,
 main div.wrapper::after {
-  mask-image: url('/assets/patterns/texture.svg');
+  mask-image: var(--image-texture);
 }
 
 main div.wrapper::before {

@@ -1,10 +1,12 @@
 :root,
 :host {
-  --color-primary: #fdfd1f;
-  --color-background: #faffff;
-  --color-foreground: #171717;
+  --color-primary: rgba(253, 253, 31, 1);
+  --color-background: rgba(250, 255, 255, 1);
+  --color-foreground: rgba(23, 23, 23, 1);
 
   --image-graph-paper: url('/assets/patterns/graph-paper.svg');
+  --image-diagonal-lines: url('/assets/patterns/diagonal-lines.svg');
+  --image-texture: url('/assets/patterns/texture.svg');
 }
 
 :focus-visible {
@@ -16,9 +18,10 @@
 html.dark {
   --color-primary: rgba(34, 187, 255, 1);
   --color-background: rgba(19, 20, 21, 1);
-  --color-foreground: #ededed;
+  --color-foreground: rgba(237, 237, 237, 1);
 
-  --image-background: url('/assets/patterns/graph-paper-dark.svg');
+  /* avoiding mask in body */
+  --image-graph-paper: url('/assets/patterns/graph-paper-dark.svg');
 
   color-scheme: dark;
 }

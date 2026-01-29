@@ -22,7 +22,7 @@ defineProps<Prop>()
   position: absolute;
   top: 25%;
   right: -2.5rem;
-  mask-image: url('/assets/patterns/diagonal-lines.svg');
+  mask-image: var(--image-diagonal-lines);
   opacity: 0.2;
 }
 </style>
