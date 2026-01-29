@@ -53,31 +53,17 @@ function isSocialSection(key: string) {
               {{ rt(section._label) }}
             </h2>
             <ul gap="4 xl:6" flex="~ col">
-              <li v-for="item in section.items" :key="item.title" flex="~ col" class="group list-decoration">
-                <template v-if="isSocialSection(section._label)">
-                  <div class="rounded h-full w-full shadow-foreground/5 left-0 top-0 absolute z-0 group-hover:shadow">
-                    <div class="h-full w-full absolute">
-                      <div class="flex justify-between overflow-x-hidden" m="t-1 r-1">
-                        <div class="bg-primary opacity-0 w-screen transition duration-500 group-hover:(translate-x-full opacity-100)" />
-                        <div class="p-0.5 bg-transparent flex items-center right-2 top-2 justify-center">
-                          <div text="xl foreground group-hover:black" i="carbon-arrow-up-right" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <a target="_blank" :href="getSocialLink(item.title)" class="relative" m="y--2 x--2" p="t-1 x-2 b-4">
-                    <h3 class="leading-loose tracking-wider">
-                      {{ rt(item.title) }}
-                    </h3>
-                    <div class="text-sm leading-tight opacity-80 flex gap-2 items-center">
-                      <div :class="resolveT(item.title) !== 'linkedin' ? 'i-carbon-at' : 'i-carbon-link'" />
-                      <h4 class="tracking-wider truncate">
-                        {{ rt(item.subtitle) }}
-                      </h4>
-                    </div>
-                  </a>
-                </template>
-                <template v-else>
+              <li v-for="item in section.items" :key="item.title" class="group list-decoration">
+                <div v-if="isSocialSection(section._label)" flex="~ col">
+                  <ExternalIndicator />
+                  <SocialLink
+                    :title="rt(item.title)"
+                    :subtitle="rt(item.subtitle)"
+                    :href="getSocialLink(item.title)"
+                    :icon-type="resolveT(item.title) !== 'linkedin' ? 'at' : 'link'"
+                  />
+                </div>
+                <div v-else flex="~ col" class="gap-1">
                   <h3 class="leading-loose tracking-wider">
                     {{ rt(item.title) }}
                   </h3>
@@ -88,37 +74,18 @@ function isSocialSection(key: string) {
                       </h4>
                     </li>
                   </ul>
-                  <h4
-                    v-else
-                    class="text-sm leading-relaxed tracking-wider opacity-80"
-                  >
+                  <span v-else class="text-sm leading-relaxed tracking-wider opacity-80">
                     {{ rt(item.subtitle) }}
-                  </h4>
-                </template>
+                  </span>
+                </div>
               </li>
             </ul>
           </section>
         </div>
       </div>
     </div>
-    <div>
-      <footer text="xs right" class="p-1">
-        <div class="flex gap-1.5 items-center justify-end">
-          <a class="underline select-none" href="https://github.com/Say1ddd/personal-website" target="_blank">
-            <div class="flex gap-1 items-center">
-              <span block i="carbon-logo-github" />
-              <span>Source code</span>
-            </div>
-          </a>
-          <span class="opacity-50 select-none">\\</span>
-          <span>handcrafted with love &hearts;</span>
-        </div>
-        <span>2025-Present &copy; Sajid Ikhlas</span>
-      </footer>
-    </div>
-    <span class="background-label font-fugazOne text-20 pointer-events-none truncate 2xl:text-80 lg:text-56 md:text-40 sm:text-36">
-      ABOUT ME
-    </span>
+    <AboutFooter />
+    <BackgroundText>ABOUT ME</BackgroundText>
   </div>
 </template>
 
@@ -166,17 +133,6 @@ section:hover .section-line::after {
   background: var(--color-foreground);
   opacity: 0.1;
   pointer-events: none;
-}
-
-.background-label {
-  text-transform: uppercase;
-  user-select: none;
-  pointer-events: none;
-  position: absolute;
-  top: 25%;
-  right: -2.5rem;
-  mask-image: url('/assets/patterns/diagonal-lines.svg');
-  opacity: 0.2;
 }
 
 /*
