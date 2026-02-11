@@ -29,7 +29,7 @@ const transitionClass = {
       :leave-from-class="transitionClass.enterToLeaveFrom"
       :leave-to-class="transitionClass.enterFromLeaveTo"
     >
-      <PreviousButton v-if="!isInRoot" :aria-hidden="isInRoot" />
+      <PreviousButton v-show="!isInRoot" :aria-hidden="isInRoot" />
     </Transition>
 
     <main h="dvh lg:screen *:full" overflow="hidden" z="1" relative class="min-w-0">
@@ -42,11 +42,11 @@ const transitionClass = {
 
     <div aria-hidden="true" class="pointer-events-none transition-opacity duration-1000 inset-0 absolute z-0" flex="~ col">
       <Transition name="slide-down" mode="out-in">
-        <LayoutDivider v-if="isInRoot" border="before:foreground/25 after:foreground/25 *:foreground/25" />
+        <LayoutDivider v-show="isInRoot" border="before:foreground/25 after:foreground/25 *:foreground/25" />
       </Transition>
       <Transition name="minimize" mode="out-in">
         <LayoutDivider
-          v-if="isInRoot"
+          v-show="isInRoot"
           border="before:foreground/25 after:foreground/25 *:foreground/25 *:t-none"
           rounded="*:b-lg"
           bg="*:background"
@@ -55,7 +55,7 @@ const transitionClass = {
         />
       </Transition>
       <Transition name="scale-up" mode="out-in">
-        <LayoutDivider v-if="isInRoot" border="before:foreground/25 after:foreground/25 *:foreground/25" />
+        <LayoutDivider v-show="isInRoot" border="before:foreground/25 after:foreground/25 *:foreground/25" />
       </Transition>
     </div>
   </div>
