@@ -27,10 +27,25 @@ const links = [
     href: 'https://www.linkedin.com/in/sajid-ikhlas/',
   },
 ]
+
+const works = [
+  {
+    label: 'SIM WEB',
+    href: '/work/sim-web',
+  },
+  {
+    label: 'Stage Two',
+    href: '/work/stage-two',
+  },
+  {
+    label: 'OG Tool',
+    href: '/work/og-tool',
+  },
+]
 </script>
 
 <template>
-  <div class="bg-background relative" overflow="x-hidden y-auto" h="full" snap="y mandatory" tabindex="0" autofocus>
+  <div class="relative" overflow="x-hidden y-auto" h="full" snap="y mandatory">
     <section class="text-primary px-4 flex justify-between">
       <span>Home Page</span>
       <span>nothing to see here...</span>
@@ -47,9 +62,16 @@ const links = [
         </button>
       </div>
     </section>
-    <section class="section-divider" snap="always center" h="full">
-      <div>
+    <section class="section-divider text-right flex items-center justify-end" snap="always center" h="full">
+      <div flex="~ 1 col">
         <h1>{{ t('home.section_2.title') }}</h1>
+        <ul class="border">
+          <li v-for="work in works" :key="work.href" class="font-extrabold uppercase from-transparent bg-linear-to-r hover:(text-black to-primary)">
+            <RouterLink :to="work.href" block>
+              <span class="text-5xl">{{ work.label }}</span>
+            </RouterLink>
+          </li>
+        </ul>
         <h2>{{ t('home.section_2.subtitle') }}</h2>
       </div>
     </section>
@@ -104,8 +126,3 @@ const links = [
   left: 0;
 }
 </style>
-
-<route lang="yaml">
-meta:
-  layout: default
-</route>
