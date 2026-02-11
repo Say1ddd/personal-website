@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded h-full w-full shadow-foreground/5 left-0 top-0 absolute group-hover:shadow">
+  <div aria-hidden="true" class="rounded h-full w-full shadow-foreground/5 left-0 top-0 absolute group-hover:shadow">
     <div class="h-full w-full absolute">
       <div class="flex justify-between overflow-x-hidden" m="t-1 r-1">
         <div class="bg-primary opacity-0 w-screen transition duration-500 group-hover:(translate-x-full opacity-100)" />

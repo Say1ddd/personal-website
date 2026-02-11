@@ -12,11 +12,11 @@ const {
 </script>
 
 <template>
-  <button :data-state="state" role="button" class="group bottom-line p-2 flex gap-3 h-full truncate items-center overflow-y-clip">
-    <span class="bottom-full bg-primary opacity-0 h-px w-full inline-block pointer-events-none transition-opacity absolute group-hover:opacity-100" />
-    <span class="bg-primary opacity-0 h-1.5 w-1 inline-block pointer-events-none transition-opacity top-0 absolute group-hover:opacity-100" />
+  <button :data-state="state" class="group bottom-line p-2 flex gap-3 h-full truncate items-center overflow-y-clip">
+    <span aria-hidden="true" class="bottom-full bg-primary opacity-0 h-px w-full inline-block pointer-events-none transition-opacity absolute group-hover:opacity-100" />
+    <span aria-hidden="true" class="bg-primary opacity-0 h-1.5 w-1 inline-block pointer-events-none transition-opacity top-0 absolute group-hover:opacity-100" />
     <slot />
-    <span class="state-label text-xs text-black tracking-wide bg-primary w-13 pointer-events-none truncate shadow transition group-hover:opacity-100 group-hover:rotate-none group-active:scale-90">
+    <span aria-hidden="true" class="state-label text-xs text-black tracking-wide bg-primary w-13 pointer-events-none truncate shadow transition group-hover:opacity-100 group-hover:rotate-none group-active:scale-90">
       <Transition mode="out-in" name="slide-y">
         <span v-if="state">{{ truthyLabel }}</span>
         <span v-else>{{ falsyLabel }}</span>
