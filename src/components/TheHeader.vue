@@ -81,24 +81,27 @@ const socials = [
     href: 'https://github.com/Say1ddd/',
   },
 ]
+
+// TODO: fix horizontal scrolling on mobile breakpoint
 </script>
 
 <template>
-  <header class="font-jetBMono flex h-10 items-center justify-between relative">
-    <div class="font-(manrope black) text-4xl tracking-widest flex-1 select-none relative z-30 from-foreground/5 to-transparent bg-linear-to-l">
+  <header class="font-jetBMono px-4 bg-transparent flex h-10 w-full items-center top-4 justify-between absolute z-50">
+    <div class="font-(manrope black) text-4xl tracking-widest flex-1 select-none relative z-30">
       FPS {{ fps }}
     </div>
-    <div class="underline flex h-full w-30 items-center relative from-foreground/5 to-transparent bg-linear-to-r md:w-80">
+    <div class="underline flex h-full w-30 items-center relative md:w-80">
       <ToggleButton class="flex-1 hover:bg-primary/10" :state="locale === 'en'" truthy-label="ENG" falsy-label="IDN" @click="toggleLocale">
-        <span i-carbon-language block />
+        <span aria-hidden="true" i-carbon-language block />
         <span class="text-sm font-medium hidden truncate md:block" v-html="t('button.toggle_lang')" />
       </ToggleButton>
       <ToggleButton class="flex-1 hover:bg-primary/10" :state="isDark" :truthy-label="t('button.toggle_theme.dark')" :falsy-label="t('button.toggle_theme.light')" @click="toggleDark()">
-        <span block i="carbon-sun dark:carbon-moon" />
+        <span aria-hidden="true" block i="carbon-sun dark:carbon-moon" />
         <span class="text-sm font-medium hidden truncate md:block" v-html="t('button.toggle_theme._label')" />
       </ToggleButton>
       <button flex="~ 1" class="text-foreground bg-foreground/20 h-full items-center justify-center relative z-30 md:hidden" @click="toggleSidebar">
-        <span i-carbon-menu block />
+        <span sr-only>Menu</span>
+        <span aria-hidden="true" i-carbon-menu block />
       </button>
     </div>
   </header>

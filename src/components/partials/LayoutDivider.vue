@@ -8,12 +8,14 @@ const pseudoElClasses = {
 
 <template>
   <div
+    aria-hidden="true"
     :class="`divider ${pseudoElClasses.child} ${pseudoElClasses.before} ${pseudoElClasses.after}`"
-    :data-leading="!!$slots.leading" :data-trailing="!!$slots.trailing"
+    :data-leading="!!$slots.leading"
+    :data-trailing="!!$slots.trailing"
   >
     <slot name="leading" />
     <slot>
-      <div />
+      <div aria-hidden="true" />
     </slot>
     <slot name="trailing" />
   </div>

@@ -18,7 +18,7 @@ const {
       {{ title }}
     </h3>
     <div v-if="subtitle" class="text-sm leading-tight opacity-80 flex gap-2 items-center">
-      <div :class="iconType === 'at' ? 'i-carbon-at' : 'i-carbon-link'" />
+      <div aria-hidden="true" :class="iconType === 'at' ? 'i-carbon-at' : 'i-carbon-link'" />
       <h4 class="tracking-wider truncate">
         {{ subtitle }}
       </h4>
