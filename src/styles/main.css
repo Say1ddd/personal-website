@@ -60,14 +60,29 @@ html.dark {
 /* named transitions */
 .fade-enter-active,
 .fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 100;
+}
+
+.fade-reveal-enter-active,
+.fade-reveal-leave-active {
   transition:
     transform 0.5s ease,
     opacity 0.3s ease-out;
   transform-origin: left;
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.fade-reveal-enter-from,
+.fade-reveal-leave-to {
   opacity: 0;
   transform: rotateY(45deg);
   transform-origin: left;
