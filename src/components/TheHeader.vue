@@ -95,13 +95,13 @@ const socials = [
         <span aria-hidden="true" i="carbon-language" block />
         <span class="text-sm font-medium truncate sr-only md:not-sr-only">{{ t('button.toggle_lang') }}</span>
       </ToggleButton>
-      <ToggleButton class="flex-1 hover:bg-primary/10" :state="isDark" :truthy-label="t('button.toggle_theme.dark')" :falsy-label="t('button.toggle_theme.light')" @click="toggleDark()">
+      <ToggleButton class="flex-1 pointer-events-auto hover:bg-primary/10" :state="isDark" :truthy-label="t('button.toggle_theme.dark')" :falsy-label="t('button.toggle_theme.light')" @click="toggleDark()">
         <span aria-hidden="true" block i="carbon-sun dark:carbon-moon" />
         <span class="text-sm font-medium truncate sr-only md:not-sr-only">{{ t('button.toggle_theme._label') }}</span>
       </ToggleButton>
-      <button flex="~ 1" class="text-foreground bg-foreground/20 h-full items-center justify-center relative z-30 md:hidden" @click="toggleSidebar">
-        <span sr-only>Menu</span>
+      <button flex="~ 1" class="text-foreground bg-foreground/20 h-full pointer-events-auto items-center justify-center relative z-30 md:hidden" @click="toggleSidebar">
         <span aria-hidden="true" i="carbon-menu" block />
+        <span sr-only>Menu</span>
       </button>
     </div>
   </header>

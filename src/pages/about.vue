@@ -85,7 +85,9 @@ function isSocialSection(key: string) {
       </div>
     </div>
     <AboutFooter />
+    <!--
     <BackgroundText>ABOUT ME</BackgroundText>
+    -->
   </div>
 </template>
 
