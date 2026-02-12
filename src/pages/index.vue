@@ -6,7 +6,7 @@ const { top: isOnTop, bottom: isOnBottom } = toRefs(arrivedState)
 const { left: toLeft, right: toRight, top: toTop, bottom: toBottom } = toRefs(directions)
  */
 
-const { t } = useI18n()
+const { t, tm } = useI18n()
 
 useHead({
   title: () => t('button.home'),
@@ -48,8 +48,11 @@ const works = [
     <section class="section-divider gap-3 justify-center" p="4" flex="~ col" snap="always center" h="full">
       <div class="items-center justify-center" flex="~ 1" p="4">
         <div container flex="~ col" gap="4" border="l-4 primary" class="pl-4 container">
-          <h1 class="heading-1">
+          <h1 v-if="tm('home.section_1')" class="heading-1">
             {{ t('home.section_1') }}
+          </h1>
+          <h1 v-else>
+            Welcome to my personal website.
           </h1>
           <div flex="1" class="">
             <RouterLink to="/about" data-cy="about" p="y-2 x-3" class="text-primary font-bold tracking-widest bg-background w-fit select-none" hover="bg-primary text-black" border="~ r-4 primary">

@@ -86,22 +86,22 @@ const socials = [
 </script>
 
 <template>
-  <header class="font-jetBMono px-4 bg-transparent flex h-10 w-full items-center top-4 justify-between absolute z-50">
-    <div class="font-(manrope black) text-4xl tracking-widest flex-1 select-none relative z-30">
+  <header class="font-jetBMono px-4 bg-transparent flex h-10 w-full pointer-events-none items-center top-4 justify-between absolute z-50">
+    <div class="font-(manrope black) text-4xl tracking-widest select-none relative z-30">
       FPS {{ fps }}
     </div>
     <div class="underline flex h-full w-30 items-center relative md:w-80">
-      <ToggleButton class="flex-1 hover:bg-primary/10" :state="locale === 'en'" truthy-label="ENG" falsy-label="IDN" @click="toggleLocale">
-        <span aria-hidden="true" i-carbon-language block />
-        <span class="text-sm font-medium hidden truncate md:block">{{ t('button.toggle_lang') }}</span>
+      <ToggleButton class="flex-1 pointer-events-auto hover:bg-primary/10" :state="locale === 'en'" truthy-label="ENG" falsy-label="IDN" @click="toggleLocale">
+        <span aria-hidden="true" i="carbon-language" block />
+        <span class="text-sm font-medium truncate sr-only md:not-sr-only">{{ t('button.toggle_lang') }}</span>
       </ToggleButton>
       <ToggleButton class="flex-1 hover:bg-primary/10" :state="isDark" :truthy-label="t('button.toggle_theme.dark')" :falsy-label="t('button.toggle_theme.light')" @click="toggleDark()">
         <span aria-hidden="true" block i="carbon-sun dark:carbon-moon" />
-        <span class="text-sm font-medium hidden truncate md:block">{{ t('button.toggle_theme._label') }}</span>
+        <span class="text-sm font-medium truncate sr-only md:not-sr-only">{{ t('button.toggle_theme._label') }}</span>
       </ToggleButton>
       <button flex="~ 1" class="text-foreground bg-foreground/20 h-full items-center justify-center relative z-30 md:hidden" @click="toggleSidebar">
         <span sr-only>Menu</span>
-        <span aria-hidden="true" i-carbon-menu block />
+        <span aria-hidden="true" i="carbon-menu" block />
       </button>
     </div>
   </header>
@@ -117,7 +117,7 @@ const socials = [
                   v-for="nav in navigations" :key="nav.href" class="py-2 flex gap-2 select-none items-center justify-end bg-linear-to-r" :class="currentPath === nav.href ? `from-transparent to-primary text-black` : `from-transparent to-background/20`"
                   @click="navigateTo(nav.href)"
                 >
-                  <div v-if="currentPath === nav.href" class="text-xl" i-carbon-triangle-right-solid />
+                  <div v-if="currentPath === nav.href" class="text-xl" i="carbon-triangle-right-solid" />
                   <span class="text-5xl tracking-wider uppercase">
                     {{ t(nav.i18n) }}
                   </span>
@@ -133,7 +133,7 @@ const socials = [
                   :class="currentPath === work.href ? `from-transparent to-primary text-black` : `from-transparent to-background/20`"
                   @click="navigateTo(work.href)"
                 >
-                  <div v-if="currentPath === work.href" class="text-xl" i-carbon-triangle-right-solid />
+                  <div v-if="currentPath === work.href" class="text-xl" i="carbon-triangle-right-solid" />
                   <span class="text-5xl tracking-wider uppercase">
                     {{ work.label }}
                   </span>
@@ -156,14 +156,14 @@ const socials = [
                   <li v-for="social in socials" :key="social.href">
                     <a :href="social.href" target="_blank" class="inline-flex gap-1 items-center">
                       <span>{{ social.label }}</span>
-                      <div i-carbon-arrow-up-right />
+                      <div i="carbon-arrow-up-right" />
                     </a>
                   </li>
                 </ul>
               </div>
               <div flex="~ col" class="gap-3">
                 <a href="https://github.com/Say1ddd/personal-space/" target="_blank" p="y-2 x-3" class="text-sm bg-foreground/20 inline-flex gap-2 w-fit items-center">
-                  <div i-carbon-logo-github />
+                  <div i="carbon-logo-github" />
                   <span>Source code</span>
                 </a>
                 <div class="text-xs inline-flex flex-col *:p-0.5">
