@@ -12,11 +12,11 @@ const {
 </script>
 
 <template>
-  <button :data-state="state" class="group bottom-line p-2 flex gap-3 h-full truncate items-center overflow-y-clip">
-    <span aria-hidden="true" class="bottom-full bg-primary opacity-0 h-px w-full inline-block pointer-events-none transition-opacity absolute group-hover:opacity-100" />
-    <span aria-hidden="true" class="bg-primary opacity-0 h-1.5 w-1 inline-block pointer-events-none transition-opacity top-0 absolute group-hover:opacity-100" />
+  <button class="group bottom-line p-2 flex gap-3 h-full truncate items-center overflow-y-clip">
+    <span aria-hidden="true" bg="primary" transition="opacity" inline-block absolute class="bottom-full opacity-0 h-px w-full pointer-events-none group-hover:opacity-100" />
+    <span aria-hidden="true" bg="primary" transition="opacity" inline-block absolute class="opacity-0 h-1.5 w-1 pointer-events-none top-0 group-hover:opacity-100" />
     <slot />
-    <span aria-hidden="true" class="state-label text-xs text-black tracking-wide bg-primary w-13 pointer-events-none truncate shadow transition group-hover:opacity-100 group-hover:rotate-none group-active:scale-90">
+    <span aria-hidden="true" tracking="wide" text="sm black" bg="primary" transition="transform" w="14" class="state-label pointer-events-none truncate group-hover:(visible rotate-none scale-90)">
       <Transition mode="out-in" name="slide-y">
         <span v-if="state">{{ truthyLabel }}</span>
         <span v-else>{{ falsyLabel }}</span>
@@ -49,7 +49,7 @@ const {
   bottom: 100%;
   right: 0;
   z-index: 10;
-  opacity: 0;
+  visibility: hidden;
   text-transform: uppercase;
   transform-origin: left;
   rotate: calc(45deg / 2);

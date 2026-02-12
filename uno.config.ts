@@ -38,9 +38,21 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        manrope: 'Manrope',
-        jetBMono: 'JetBrains Mono',
+        manrope: [
+          {
+            name: 'Manrope',
+            weights: ['200', '400', '800'],
+          },
+        ],
+        jetBMono: [
+          {
+            name: 'JetBrains Mono',
+            weights: ['800'],
+          },
+        ],
         fugazOne: 'Fugaz One',
+        // plaster: 'Plaster',
+        // climateCrisis: 'Climate Crisis',
       },
       processors: import.meta.env.DEV
         ? [createLocalFontProcessor()]

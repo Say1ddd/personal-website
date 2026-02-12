@@ -1,9 +1,4 @@
 <script setup lang="ts">
-defineOptions({
-  name: 'IndexPage',
-})
-
-const router = useRouter()
 /**
 const el = useTemplateRef('el')
 const { x, y, isScrolling, arrivedState, directions, measure } = useScroll(el)
@@ -51,15 +46,17 @@ const works = [
       <span>nothing to see here...</span>
     </section>
     <section class="section-divider gap-3 justify-center" p="4" flex="~ col" snap="always center" h="full">
-      <div border="l-4 primary" class="pl-4">
-        <h1 class="heading-1">
-          {{ t('home.section_1') }}
-        </h1>
-      </div>
-      <div class="text-right md:text-center">
-        <button data-cy="about" p="y-2 x-3" class="text-primary font-bold tracking-widest bg-background w-fit" hover="bg-primary text-black" border="~ r-4 primary" @click="router.push('/about')">
-          <span>ABOUT ME</span>
-        </button>
+      <div class="items-center justify-center" flex="~ 1" p="4">
+        <div container flex="~ col" gap="4" border="l-4 primary" class="pl-4 container">
+          <h1 class="heading-1">
+            {{ t('home.section_1') }}
+          </h1>
+          <div flex="1" class="">
+            <RouterLink to="/about" data-cy="about" p="y-2 x-3" class="text-primary font-bold tracking-widest bg-background w-fit select-none" hover="bg-primary text-black" border="~ r-4 primary">
+              <span>ABOUT ME</span>
+            </RouterLink>
+          </div>
+        </div>
       </div>
     </section>
     <section class="section-divider text-right flex items-center justify-end" snap="always center" h="full">
@@ -85,7 +82,9 @@ const works = [
       <footer>
         <div class="text-center">
           Source code can be found
-          <a href="https://github.com/say1ddd/personal-website/" target="_blank" class="underline">here</a>,
+          <a href="https://github.com/say1ddd/personal-website/" target="_blank" class="underline">
+            here <span class="sr-only">on my Github</span>
+          </a>,
           and is licensed under
           <a href="https://github.com/Say1ddd/personal-space/blob/main/LICENSE" target="_blank" class="underline">MIT</a>.
           Assets (such as words and images) are licensed under
