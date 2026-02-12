@@ -37,7 +37,7 @@ function isSocialSection(key: string) {
 
 <template>
   <div flex="~ col" overflow="y-auto x-hidden" class="justify-between relative from-background to-background/50 from-75% bg-linear-to-b">
-    <div flex="~ col lg:row" gap="y-2 md:y-8 x-4" class="mx-auto container" p="t-16 x-3">
+    <div flex="~ 1 col lg:row" gap="y-2 md:y-8 x-4" class="mx-auto container" p="t-16 x-3">
       <div text="xl xl:2xl" leading="relaxed sm:loose" class="tracking-wide flex-1 max-w-3xl">
         <h1>{{ t('about.title') }}</h1>
         <h1>{{ t('about.subtitle') }}</h1>
@@ -85,7 +85,9 @@ function isSocialSection(key: string) {
       </div>
     </div>
     <AboutFooter />
+    <!--
     <BackgroundText>ABOUT ME</BackgroundText>
+    -->
   </div>
 </template>
 

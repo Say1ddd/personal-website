@@ -25,7 +25,7 @@ const isVisible = useElementVisibility(ref)
   right: 3rem;
   user-select: none;
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   opacity: 0.2;
   overflow: hidden;
 }
