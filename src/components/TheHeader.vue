@@ -93,11 +93,11 @@ const socials = [
     <div class="underline flex h-full w-30 items-center relative md:w-80">
       <ToggleButton class="flex-1 hover:bg-primary/10" :state="locale === 'en'" truthy-label="ENG" falsy-label="IDN" @click="toggleLocale">
         <span aria-hidden="true" i-carbon-language block />
-        <span class="text-sm font-medium hidden truncate md:block" v-html="t('button.toggle_lang')" />
+        <span class="text-sm font-medium hidden truncate md:block">{{ t('button.toggle_lang') }}</span>
       </ToggleButton>
       <ToggleButton class="flex-1 hover:bg-primary/10" :state="isDark" :truthy-label="t('button.toggle_theme.dark')" :falsy-label="t('button.toggle_theme.light')" @click="toggleDark()">
         <span aria-hidden="true" block i="carbon-sun dark:carbon-moon" />
-        <span class="text-sm font-medium hidden truncate md:block" v-html="t('button.toggle_theme._label')" />
+        <span class="text-sm font-medium hidden truncate md:block">{{ t('button.toggle_theme._label') }}</span>
       </ToggleButton>
       <button flex="~ 1" class="text-foreground bg-foreground/20 h-full items-center justify-center relative z-30 md:hidden" @click="toggleSidebar">
         <span sr-only>Menu</span>
