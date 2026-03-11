@@ -100,7 +100,9 @@ export default defineConfig({
       reduceInlineStyles: false,
     },
     onFinished() {
-      generateSitemap()
+      generateSitemap({
+        hostname: 'https://sikhlas.com/',
+      })
     },
   },
 
