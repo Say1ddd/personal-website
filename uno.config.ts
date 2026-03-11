@@ -7,7 +7,6 @@ import {
   presetIcons,
   presetTypography,
   presetWebFonts,
-  presetWind3,
   presetWind4,
   transformerDirectives,
   transformerVariantGroup,
@@ -29,7 +28,6 @@ export default defineConfig({
     },
   },
   presets: [
-    presetWind3,
     presetWind4,
     presetAttributify(),
     presetIcons({
