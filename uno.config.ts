@@ -30,10 +30,10 @@ export default defineConfig({
       composite: 'var(--transition-composite)',
     },
     ease: {
-      'io-quint': 'var(--ease-io-quint)',
-      'io-circ': 'var(--ease-io-circ)',
-      'o-expo': 'var(--ease-o-expo)',
-      'o-back': 'var(--ease-o-back)',
+      'in-out-quint': 'var(--ease-io-quint)',
+      'in-out-circ': 'var(--ease-io-circ)',
+      'out-expo': 'var(--ease-o-expo)',
+      'out-back': 'var(--ease-o-back)',
     },
   },
   presets: [
