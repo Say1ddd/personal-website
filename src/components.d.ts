@@ -8,13 +8,19 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AboutFooter: typeof import('./components/partials/about/AboutFooter.vue')['default']
+    AboutSection: typeof import('./components/partials/about/AboutSection.vue')['default']
+    AppLogo: typeof import('./components/AppLogo.vue')['default']
     BackgroundText: typeof import('./components/partials/about/BackgroundText.vue')['default']
-    ExternalIndicator: typeof import('./components/partials/about/ExternalIndicator.vue')['default']
+    DefaultCard: typeof import('./components/partials/about/DefaultCard.vue')['default']
+    FooterBackground: typeof import('./components/partials/FooterBackground.vue')['default']
+    FooterOverlay: typeof import('./components/FooterOverlay.vue')['default']
+    HeaderOverlay: typeof import('./components/HeaderOverlay.vue')['default']
     LayoutDivider: typeof import('./components/partials/LayoutDivider.vue')['default']
+    NavOverlay: typeof import('./components/NavOverlay.vue')['default']
     PreviousButton: typeof import('./components/partials/PreviousButton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SocialCard: typeof import('./components/partials/about/SocialCard.vue')['default']
     SocialLink: typeof import('./components/partials/about/SocialLink.vue')['default']
     TheHeader: typeof import('./components/TheHeader.vue')['default']
     ToggleButton: typeof import('./components/partials/ToggleButton.vue')['default']

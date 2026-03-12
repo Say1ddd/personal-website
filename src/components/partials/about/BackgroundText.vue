@@ -10,8 +10,8 @@ const isVisible = useElementVisibility(ref)
 
 <template>
   <div ref="ref" aria-hidden="true" class="wrapper">
-    <div class="curtain transition-transform duration-2000" :class="isVisible ? '-translate-y-full' : 'translate-y-none'" />
-    <span class="background-text leading-none font-fugazOne text-20 pointer-events-none truncate 2xl:text-80 lg:text-56 md:text-40 sm:text-36">
+    <div class="curtain composite-property duration-2000" :class="isVisible ? '-translate-y-full' : 'translate-y-none'" />
+    <span class="background-text text-20 leading-none font-fugazOne pointer-events-none truncate 2xl:text-80 lg:text-56 md:text-40 sm:text-36">
       <slot>
         {{ text }}
       </slot>
@@ -42,6 +42,6 @@ const isVisible = useElementVisibility(ref)
   display: flex;
   align-items: center;
   background-color: var(--color-background);
-  border-bottom: 5px solid var(--color-foreground);
+  border-bottom: calc(5px / 2) dotted var(--color-foreground);
 }
 </style>
