@@ -1,46 +1,84 @@
 <script setup lang="ts">
+import type { UseScrollReturn } from '@vueuse/core'
+
 const route = useRoute()
 
 const isInRoot = computed(() => route.path === '/')
 
-/*
-const ref = useTemplateRef('childRef')
-const { x, y, isScrolling, arrivedState, directions, measure } = useScroll(ref)
-const { top: isOnTop, bottom: isOnBottom } = toRefs(arrivedState)
-const { left: toLeft, right: toRight, top: toTop, bottom: toBottom } = toRefs(directions)
- */
+// composable init
+const el = useTemplateRef<HTMLElement>('scrollRef')
+const scrollReturn: UseScrollReturn = useScroll(el)
+
+// composable won't work on the same level as initialization
+const { arrivedState, measure } = scrollReturn
+const { bottom: isOnBottom } = toRefs(arrivedState)
+
 const transitionClass = {
   enterFromLeaveTo: 'opacity-0 rotate-90 translate-x-24',
   enterToLeaveFrom: 'opacity-100 rotate-0 translate-x-none',
-  enterActive: 'pointer-events-none transition duration-500 delay-500',
-  leaveActive: 'pointer-events-none transition duration-300',
+  enterActive: 'transition-composite pointer-events-none duration-500 delay-300',
+  leaveActive: 'transition-composite pointer-events-none duration-300 delay-500',
 }
+
+/* ? there has to be another way (try checking whether the component has already mounted(?))
+* nvm this is fixed thanks to transition hooks https://vuejs.org/guide/built-ins/transition.html#javascript-hooks
+router.afterEach(() => {
+  setTimeout(() => {
+    measure()
+  }, 1000)
+  console.info('afterEach after 1 second timeout')
+})
+*/
 </script>
 
 <template>
   <div>
-    <TheHeader />
-    <Transition
-      mode="out-in"
-      :enter-from-class="transitionClass.enterFromLeaveTo"
-      :enter-to-class="transitionClass.enterToLeaveFrom"
-      :enter-active-class="transitionClass.enterActive"
-      :leave-active-class="transitionClass.leaveActive"
-      :leave-from-class="transitionClass.enterToLeaveFrom"
-      :leave-to-class="transitionClass.enterFromLeaveTo"
-    >
-      <PreviousButton v-show="!isInRoot" :aria-hidden="isInRoot" />
-    </Transition>
+    <!-- top overlay -->
+    <div w="full" fixed z="30" top="0" pointer-events="none">
+      <div m="x-4" p="x-4" translate-y="4">
+        <NavOverlay>
+          <template #left>
+            <AppLogo />
+          </template>
+        </NavOverlay>
+        <div p="x-4" flex class="justify-end">
+          <Transition
+            mode="out-in"
+            :enter-from-class="transitionClass.enterFromLeaveTo"
+            :enter-to-class="transitionClass.enterToLeaveFrom"
+            :enter-active-class="transitionClass.enterActive"
+            :leave-active-class="transitionClass.leaveActive"
+            :leave-from-class="transitionClass.enterToLeaveFrom"
+            :leave-to-class="transitionClass.enterFromLeaveTo"
+          >
+            <PreviousButton v-show="!isInRoot" :aria-hidden="isInRoot" />
+          </Transition>
+        </div>
+      </div>
+    </div>
 
+    <!-- content -->
     <main h="dvh lg:screen *:full" overflow="hidden" z="1" relative class="min-w-0">
       <RouterView v-slot="{ Component, route: r }">
-        <Transition name="fade-reveal" mode="out-in">
-          <component :is="Component" :key="r.path" />
+        <Transition name="fade-reveal" mode="out-in" @after-enter="measure">
+          <component :is="Component" ref="scrollRef" :key="r.path" />
         </Transition>
       </RouterView>
     </main>
 
-    <div aria-hidden="true" class="pointer-events-none transition-opacity duration-1000 inset-0 absolute z-0" flex="~ col">
+    <!-- bottom overlay -->
+    <div bottom="0" fixed pointer-events="none" w="full" z="25">
+      <div translate-y="-4" flex="~ col" gap="4 sm:0">
+        <HeaderOverlay lowercase relative z="10" m="x-4" p="x-0 sm:x-4" />
+        <FooterOverlay relative z="10" transition="composite" duration="300" ease="out-back" m="sm:(x-4 y-0)" p="sm:x-4" :class="!isOnBottom ? `mx-4 p-2 sm:px-4 opacity-25 hover:opacity-75` : `mx-2 opacity-50 translate-y-2`" />
+
+        <FooterBackground inset-0 absolute z="5" bg="primary" duration="1000" ease="out-expo" :class="isOnBottom ? `opacity-100 -translate-y-2 sm:-translate-y-16 md:-translate-y-8 lg:-translate-y-16` : `opacity-0 translate-y-1/10`" />
+        <FooterBackground inset-0 absolute z="5" bg="background" duration="1000" ease="in-out-circ" border="4 t-primary transparent" :class="isOnBottom ? `opacity-100 -translate-y-2 sm:-translate-y-16 md:-translate-y-8 lg:-translate-y-16` : `opacity-0 translate-y-1/4 lg:translate-y-1/10`" />
+      </div>
+    </div>
+
+    <!-- decor -->
+    <div aria-hidden="true" inset-0 fixed z="0" flex="~ col" pointer-events="none" transition="composite" duration="1000">
       <Transition name="slide-down" mode="out-in">
         <LayoutDivider v-show="isInRoot" border="before:foreground/25 after:foreground/25 *:foreground/25" />
       </Transition>
@@ -54,21 +92,22 @@ const transitionClass = {
           flex="1"
         />
       </Transition>
-      <Transition name="scale-up" mode="out-in">
-        <LayoutDivider v-show="isInRoot" border="before:foreground/25 after:foreground/25 *:foreground/25" />
-      </Transition>
+      <LayoutDivider border="before:foreground/25 after:foreground/25 *:foreground/25" />
     </div>
   </div>
 </template>
 
 <style scoped>
+/* named transitions */
 .scale-up-enter-active,
 .scale-up-leave-active,
 .slide-down-enter-active,
 .slide-down-leave-active,
 .minimize-enter-active,
 .minimize-leave-active {
-  transition: transform 0.5s;
+  transition-property: var(--transition-composite);
+  transition-duration: 0.5s;
+  animation-timing-function: var(--ease-o-expo);
 }
 
 /* scale up */
