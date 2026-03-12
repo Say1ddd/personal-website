@@ -71,11 +71,12 @@ router.afterEach(() => {
     <!-- bottom overlay -->
     <div bottom="0" fixed pointer-events="none" w="full" z="25">
       <div translate-y="-4" flex="~ col" gap="4 sm:0">
+        <!-- fuck firefox -->
+        <FooterBackground inset-0 absolute z="5" bg="primary" transition="composite" duration="1000" ease="out-expo" :class="isOnBottom ? `opacity-100 -translate-y-2 sm:-translate-y-16 md:-translate-y-8 lg:-translate-y-16` : `opacity-0 translate-y-1/10`" />
+        <FooterBackground inset-0 absolute z="5" bg="background" transition="composite" duration="1000" ease="in-out-circ" border="4 t-primary transparent" :class="isOnBottom ? `opacity-100 -translate-y-2 sm:-translate-y-16 md:-translate-y-8 lg:-translate-y-16` : `opacity-0 translate-y-1/4 lg:translate-y-1/10`" />
+
         <HeaderOverlay lowercase relative z="10" m="x-4" p="x-0 sm:x-4" />
         <FooterOverlay relative z="10" transition="composite" duration="300" ease="out-back" m="sm:(x-4 y-0)" p="sm:x-4" :class="!isOnBottom ? `mx-4 p-2 sm:px-4 opacity-50 hover:opacity-75` : `mx-2 opacity-75 translate-y-2`" />
-
-        <FooterBackground inset-0 absolute z="5" bg="primary" duration="1000" ease="out-expo" :class="isOnBottom ? `opacity-100 -translate-y-2 sm:-translate-y-16 md:-translate-y-8 lg:-translate-y-16` : `opacity-0 translate-y-1/10`" />
-        <FooterBackground inset-0 absolute z="5" bg="background" duration="1000" ease="in-out-circ" border="4 t-primary transparent" :class="isOnBottom ? `opacity-100 -translate-y-2 sm:-translate-y-16 md:-translate-y-8 lg:-translate-y-16` : `opacity-0 translate-y-1/4 lg:translate-y-1/10`" />
       </div>
     </div>
 
