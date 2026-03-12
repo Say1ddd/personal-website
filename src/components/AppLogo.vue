@@ -30,7 +30,7 @@ const onLgBreakpoint = computed(() => {
 
 <style scoped>
 .swipe {
-  transition-property: var(--transition-composite);
+  transition-property: var(--property-composite);
   transition-timing-function: var(--ease-io-quint);
   transition-duration: 0.8s;
   transform-origin: top left;

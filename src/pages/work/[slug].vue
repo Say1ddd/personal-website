@@ -24,7 +24,7 @@ definePage({
 <style scoped>
 .hero {
   height: calc(100dvh - (100dvh / 5 * 2));
-  mask-image: var(--image-texture);
+  mask-image: var(--images-pattern-texture);
   background: linear-gradient(to top right, var(--color-foreground), transparent 75%);
 }
 

@@ -32,7 +32,7 @@ const isVisible = useElementVisibility(ref)
 
 .background-text {
   text-transform: uppercase;
-  mask-image: var(--image-diagonal-lines);
+  mask-image: var(--images-pattern-diagonal-lines);
 }
 
 .curtain {

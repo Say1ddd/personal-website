@@ -107,7 +107,7 @@ router.afterEach(() => {
 .slide-down-leave-active,
 .minimize-enter-active,
 .minimize-leave-active {
-  transition-property: var(--transition-composite);
+  transition-property: var(--property-composite);
   transition-duration: 0.5s;
   animation-timing-function: var(--ease-o-expo);
 }

@@ -69,7 +69,7 @@ function calculateDurationByIdx(idx: number, secMultiplier = 100, initialSec = 3
 
 <style scoped>
 .background-diagonal {
-  background-image: var(--image-diagonal-lines);
+  background-image: var(--images-pattern-diagonal-lines);
   background-color: transparent;
   background-attachment: fixed;
 }

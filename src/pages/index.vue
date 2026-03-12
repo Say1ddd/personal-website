@@ -71,7 +71,7 @@ useHead({
   position: absolute;
   width: 100%;
   height: 1rem;
-  mask-image: var(--image-diagonal-lines);
+  mask-image: var(--images-pattern-diagonal-lines);
   background: var(--color-foreground);
   top: 0;
   left: 0;

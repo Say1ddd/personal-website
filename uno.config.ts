@@ -27,7 +27,7 @@ export default defineConfig({
       foreground: 'var(--color-foreground)',
     },
     property: {
-      composite: 'var(--transition-composite)',
+      composite: 'var(--property-composite)',
     },
     ease: {
       'in-out-quint': 'var(--ease-io-quint)',
