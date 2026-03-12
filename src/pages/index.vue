@@ -23,7 +23,7 @@ useHead({
             {{ t('home.section_1') }}
           </h1>
           <div flex="1" class="">
-            <RouterLink to="/about" data-cy="about" p="y-2 x-3" class="text-primary tracking-widest font-bold bg-background w-fit select-none" hover="bg-primary text-black" border="~ r-4 primary">
+            <RouterLink to="/about" data-cy="about" p="y-2 x-3" class="text-black tracking-widest font-bold bg-primary w-fit select-none" border="~ r-4 primary">
               <span>ABOUT ME</span>
             </RouterLink>
           </div>

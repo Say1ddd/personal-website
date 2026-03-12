@@ -37,17 +37,17 @@ const onLgBreakpoint = computed(() => {
 }
 
 .to-bottom {
-  transform: translateY(calc(100dvh - 100% - 11rem)) translateX(calc(100vw - 100% - 2rem - 1rem - 1rem / 2));
+  transform: translateY(calc(100dvh - 100% - 13rem)) translateX(calc(100vw - 100% - 2rem - 1rem - 1rem / 2));
 }
 @media (min-width: 640px) {
   .to-bottom {
-    transform: translateY(calc(100dvh - 100% - 11rem));
+    transform: translateY(calc(100dvh - 100% - 12rem));
   }
 }
 /* 784px instead of 768px for flex wrapping footer content */
 @media (min-width: 768px) {
   .to-bottom {
-    transform: translateY(calc(100dvh - 100% - 7rem));
+    transform: translateY(calc(100dvh - 100% - 7.5rem));
   }
 }
 

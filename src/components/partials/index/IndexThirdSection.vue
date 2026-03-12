@@ -36,9 +36,9 @@ function calculateDurationByIdx(idx: number, secMultiplier = 100, initialSec = 3
                 <ul grid="~ cols-3 md:cols-4 lg:cols-6" gap="x-2 y-1" transition="composite" ease="outexpo" bg="linear-to-r" class="from-transparent via-foreground/5" :class="`duration-${calculateDurationByIdx(i, 500)} ${!isVisible && 'translate-x-full'}`">
                   <li v-for="item in items" :key="item.icon" flex gap="2" class="items-center" text="xs sm:base xl:lg" font="medium" tracking="wide">
                     <div :class="`${item.icon} duration-${calculateDurationByIdx(i, 100)} ${!isVisible && 'rotate-360'}`" />
-                    <h5 truncate>
+                    <h4 truncate>
                       {{ item.label }}
-                    </h5>
+                    </h4>
                   </li>
                 </ul>
               </li>
