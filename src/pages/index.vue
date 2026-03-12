@@ -1,27 +1,9 @@
 <script setup lang="ts">
-/**
-const el = useTemplateRef('el')
-const { x, y, isScrolling, arrivedState, directions, measure } = useScroll(el)
-const { top: isOnTop, bottom: isOnBottom } = toRefs(arrivedState)
-const { left: toLeft, right: toRight, top: toTop, bottom: toBottom } = toRefs(directions)
- */
-
-const { t, tm } = useI18n()
+const { t } = useI18n()
 
 useHead({
   title: () => t('button.home'),
 })
-
-const links = [
-  {
-    slug: 'instagram',
-    href: 'https://www.instagram.com/say1ddd/',
-  },
-  {
-    slug: 'linkedin',
-    href: 'https://www.linkedin.com/in/sajid-ikhlas/',
-  },
-]
 
 const works = [
   {
@@ -41,28 +23,27 @@ const works = [
 
 <template>
   <div class="relative" overflow="x-hidden y-auto" h="full" snap="y mandatory">
+    <!--
     <section class="text-primary px-4 flex justify-between">
       <span>Home Page</span>
       <span>nothing to see here...</span>
     </section>
-    <section class="section-divider gap-3 justify-center" p="4" flex="~ col" snap="always center" h="full">
+    -->
+    <section class="section-idx">
       <div class="items-center justify-center" flex="~ 1" p="4">
         <div container flex="~ col" gap="4" border="l-4 primary" class="pl-4 container">
-          <h1 v-if="tm('home.section_1')" class="heading-1">
+          <h1 class="heading-1">
             {{ t('home.section_1') }}
           </h1>
-          <h1 v-else>
-            Welcome to my personal website.
-          </h1>
           <div flex="1" class="">
-            <RouterLink to="/about" data-cy="about" p="y-2 x-3" class="text-primary font-bold tracking-widest bg-background w-fit select-none" hover="bg-primary text-black" border="~ r-4 primary">
+            <RouterLink to="/about" data-cy="about" p="y-2 x-3" class="text-primary tracking-widest font-bold bg-background w-fit select-none" hover="bg-primary text-black" border="~ r-4 primary">
               <span>ABOUT ME</span>
             </RouterLink>
           </div>
         </div>
       </div>
     </section>
-    <section class="section-divider text-right flex items-center justify-end" snap="always center" h="full">
+    <section class="section-idx text-right items-center">
       <div flex="~ 1 col">
         <h1>{{ t('home.section_2.title') }}</h1>
         <ul class="border">
@@ -75,26 +56,7 @@ const works = [
         <h2>{{ t('home.section_2.subtitle') }}</h2>
       </div>
     </section>
-    <section snap="always center" h="full">
-      <h1>Let's connect!</h1>
-      <ul>
-        <li v-for="item in links" :key="item.slug">
-          <a :href="item.href" target="_blank">{{ item.slug }}</a>
-        </li>
-      </ul>
-      <footer>
-        <div class="text-center">
-          Source code can be found
-          <a href="https://github.com/say1ddd/personal-website/" target="_blank" class="underline">
-            here <span class="sr-only">on my Github</span>
-          </a>,
-          and is licensed under
-          <a href="https://github.com/Say1ddd/personal-space/blob/main/LICENSE" target="_blank" class="underline">MIT</a>.
-          Assets (such as words and images) are licensed under
-          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" class="underline">CC-BY-NC-SA 4.0</a>
-        </div>
-      </footer>
-    </section>
+    <IndexThirdSection />
   </div>
 </template>
 
