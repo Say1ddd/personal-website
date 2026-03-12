@@ -169,7 +169,7 @@ function calculateDurationByIdx(idx: number, secMultiplier = 100, initialSec = 3
                 <h4 font="medium">
                   hello@sikhlas.com
                 </h4>
-                <span aria-hidden="true" block i="carbon-arrow-up-right" origin="top-left" duration="300" class="composite-property opacity-25 scale-75 -translate-x-full" group-hover="opacity-50 scale-100 translate-0" />
+                <span aria-hidden="true" block i="carbon-arrow-up-right" origin="top-left" transition="composite" duration="300" class="opacity-25 scale-75 -translate-x-full" group-hover="opacity-50 scale-100 translate-0" />
               </a>
             </h4>
           </div>

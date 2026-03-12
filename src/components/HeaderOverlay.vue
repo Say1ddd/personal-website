@@ -91,7 +91,7 @@ const notTopBottom = computed(() => {
 <template>
   <header gap="1.5" transition="composite" duration="500" lg="flex flex-col translate-y-0 justify-end opacity-100" :class="!isOnBottom && `translate-y-40 opacity-0`">
     <div flex gap="4 lg:16" text="sm" class="justify-between md:items-end">
-      <section v-for="(section, i) in headerContent" :key="i" max-w-fit first="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-(x-8 y-4)" last="flex-(~ wrap) flex-col lg:flex-row items-start md:items-end justify-end gap-2 lg:gap-8" duration="500" class="composite-property" :class="notTopBottom && `swipe-left`">
+      <section v-for="(section, i) in headerContent" :key="i" transition="composite" duration="500" first="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-(x-8 y-4)" last="flex-(~ wrap) flex-col lg:flex-row items-start md:items-end justify-end gap-2 lg:gap-8" class="max-w-fit" :class="notTopBottom && `swipe-left`">
         <div v-for="(card, idx) in section" :key="idx" flex="~ col" w="40" gap="1.5">
           <template v-for="item in card" :key="item.label">
             <template v-if="item.href">
@@ -100,7 +100,7 @@ const notTopBottom = computed(() => {
                 <h4 font="medium">
                   {{ item.label }}
                 </h4>
-                <span aria-hidden="true" block i="carbon-arrow-up-right" origin="top-left" duration="300" class="composite-property opacity-25 scale-75 -translate-x-full" group-hover="opacity-50 scale-100 translate-0" />
+                <span aria-hidden="true" block i="carbon-arrow-up-right" origin="top-left" transition="composite" duration="300" class="opacity-25 scale-75 -translate-x-full" group-hover="opacity-50 scale-100 translate-0" />
               </a>
               <RouterLink v-else :to="item.href" :data-active="currentPath === item.href" flex gap="4" pointer-events="auto" select="none" class="smooth-transition route-line items-center hover:scale-x-110" :class="notTopBottom && `to-top`">
                 <span aria-hidden="true" font="light" select="none" tabular-nums>{{ `0${getHrefNumLabel(item)}` }}</span>

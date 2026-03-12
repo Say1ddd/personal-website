@@ -65,20 +65,6 @@ html.dark {
   height: 1rem;
 }
 
-/* custom */
-.composite-property {
-  transition-property: var(--transition-composite);
-}
-
-.on-visible-stretch {
-  transform-origin: bottom;
-  transition-property: var(--transition-composite);
-  transition-duration: 0.5s;
-  transition-timing-function: var(--ease-o-back);
-  opacity: 0;
-  transform: scaleY(0);
-}
-
 /* named transitions */
 .fade-enter-active,
 .fade-leave-active {
