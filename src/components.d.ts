@@ -23,7 +23,6 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SocialCard: typeof import('./components/partials/about/SocialCard.vue')['default']
     SocialLink: typeof import('./components/partials/about/SocialLink.vue')['default']
-    TheHeader: typeof import('./components/TheHeader.vue')['default']
     ToggleButton: typeof import('./components/partials/ToggleButton.vue')['default']
   }
 }

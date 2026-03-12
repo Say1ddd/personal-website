@@ -28,18 +28,13 @@ catalogs:
     '@iconify-json/carbon': ^1.2.8
     '@iconify-json/simple-icons': ^1.2.71
     '@vue-macros/volar': ^3.0.0-beta.7
-    '@vue/test-utils': ^2.4.6
-    cypress: ^14.2.1
-    cypress-vite: ^1.6.0
     eslint: ^9.23.0
-    eslint-plugin-cypress: ^4.2.0
     eslint-plugin-format: ^1.0.1
     https-localhost: ^4.7.1
     lint-staged: ^15.5.0
     simple-git-hooks: ^2.12.1
     taze: ^19.0.2
     typescript: ^5.8.2
-    vitest: ^3.0.9
     vue-tsc: ^2.2.8
 
   frontend:
@@ -56,6 +51,5 @@ catalogs:
     '@types/nprogress': ^0.2.3
 
 onlyBuiltDependencies:
-  - cypress
   - esbuild
   - simple-git-hooks
