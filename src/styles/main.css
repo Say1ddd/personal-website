@@ -1,14 +1,14 @@
 :root,
 :host {
-  --transition-composite: transform, translate, scale, rotate, opacity;
+  --property-composite: transform, translate, scale, rotate, opacity;
 
   --color-primary: rgba(255, 115, 185, 1);
   --color-background: rgba(236, 237, 238, 1);
   --color-foreground: rgba(18, 18, 18, 1);
 
-  --image-graph-paper: url('/assets/patterns/graph-paper.svg');
-  --image-diagonal-lines: url('/assets/patterns/diagonal-lines.svg');
-  --image-texture: url('/assets/patterns/texture.svg');
+  --images-pattern-graph-paper: url('/assets/patterns/graph-paper.svg');
+  --images-pattern-diagonal-lines: url('/assets/patterns/diagonal-lines.svg');
+  --images-pattern-texture: url('/assets/patterns/texture.svg');
 
   /* curves */
   --ease-io-quint: cubic-bezier(0.83, 0, 0.17, 1);
@@ -29,9 +29,9 @@ html.dark {
   --color-foreground: rgba(237, 237, 237, 1);
 
   /* avoiding mask in body */
-  --image-graph-paper: url('/assets/patterns/graph-paper-dark.svg');
-  --image-diagonal-lines: url('/assets/patterns/diagonal-lines-dark.svg');
-  --image-texture: url('/assets/patterns/texture-dark.svg');
+  --images-pattern-graph-paper: url('/assets/patterns/graph-paper-dark.svg');
+  --images-pattern-diagonal-lines: url('/assets/patterns/diagonal-lines-dark.svg');
+  --images-pattern-texture: url('/assets/patterns/texture-dark.svg');
 
   color-scheme: dark;
 }
@@ -42,7 +42,7 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: var(--image-graph-paper);
+  background-image: var(--images-pattern-graph-paper);
   background-color: var(--color-background);
   overflow: hidden;
 }
@@ -68,7 +68,7 @@ html.dark {
 /* named transitions */
 .fade-enter-active,
 .fade-leave-active {
-  transition-property: var(--transition-composite);
+  transition-property: var(--property-composite);
   transition-duration: 0.5s;
 }
 
@@ -117,7 +117,7 @@ html.dark {
 
 .slide-y-enter-active,
 .slide-y-leave-active {
-  transition-property: var(--transition-composite);
+  transition-property: var(--property-composite);
   transition-duration: 0.1s;
   transition-timing-function: ease;
 }

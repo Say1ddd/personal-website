@@ -26,7 +26,7 @@ defineProps<Prop>()
   width: 100%;
   height: 2px;
   background-color: var(--color-foreground);
-  transition-property: var(--transition-composite);
+  transition-property: var(--property-composite);
   transition-duration: 0.4s;
   transition-timing-function: ease-out;
   transform: rotateY(90deg);

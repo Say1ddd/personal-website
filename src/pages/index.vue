@@ -1,24 +1,11 @@
 <script setup lang="ts">
+import { WORKS } from '~/constants'
+
 const { t } = useI18n()
 
 useHead({
   title: () => t('button.home'),
 })
-
-const works = [
-  {
-    label: 'SIM WEB',
-    href: '/work/sim-web',
-  },
-  {
-    label: 'Stage Two',
-    href: '/work/stage-two',
-  },
-  {
-    label: 'OG Tool',
-    href: '/work/og-tool',
-  },
-]
 </script>
 
 <template>
@@ -36,7 +23,7 @@ const works = [
             {{ t('home.section_1') }}
           </h1>
           <div flex="1" class="">
-            <RouterLink to="/about" data-cy="about" p="y-2 x-3" class="text-primary tracking-widest font-bold bg-background w-fit select-none" hover="bg-primary text-black" border="~ r-4 primary">
+            <RouterLink to="/about" data-cy="about" p="y-2 x-3" class="text-black tracking-widest font-bold bg-primary w-fit select-none" border="~ r-4 primary">
               <span>ABOUT ME</span>
             </RouterLink>
           </div>
@@ -47,8 +34,8 @@ const works = [
       <div flex="~ 1 col">
         <h1>{{ t('home.section_2.title') }}</h1>
         <ul class="border">
-          <li v-for="work in works" :key="work.href" class="font-extrabold uppercase from-transparent bg-linear-to-r hover:(text-black to-primary)">
-            <RouterLink :to="work.href" block>
+          <li v-for="work in WORKS" :key="work.href" class="font-extrabold uppercase from-transparent bg-linear-to-r hover:(text-black to-primary)">
+            <RouterLink :to="work.href || ''" block>
               <span class="text-5xl">{{ work.label }}</span>
             </RouterLink>
           </li>
@@ -84,7 +71,7 @@ const works = [
   position: absolute;
   width: 100%;
   height: 1rem;
-  mask-image: var(--image-diagonal-lines);
+  mask-image: var(--images-pattern-diagonal-lines);
   background: var(--color-foreground);
   top: 0;
   left: 0;

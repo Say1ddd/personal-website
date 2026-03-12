@@ -36,7 +36,7 @@ const {
   height: 6px;
   background-color: var(--color-primary);
   transform-origin: left;
-  transition-property: var(--transition-composite);
+  transition-property: var(--property-composite);
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
   pointer-events: none;

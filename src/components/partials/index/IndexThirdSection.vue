@@ -1,130 +1,10 @@
 <script setup lang="ts">
+import { STACKS } from '~/constants'
+
 const visibilityTarget = useTemplateRef('sectionRef')
 const isVisible = useElementVisibility(visibilityTarget, {
   threshold: 2 / 3,
 })
-
-interface StackItem {
-  label: string
-  icon: string
-}
-
-interface Stack {
-  programmingLanguage: StackItem[]
-  frameworkLibrary: StackItem[]
-  toolSoftware: StackItem[]
-  database: StackItem[]
-}
-const stacks: Stack = {
-  programmingLanguage: [
-    {
-      label: 'JavaScript',
-      icon: 'i-simple-icons-javascript',
-    },
-    {
-      label: 'TypeScript',
-      icon: 'i-simple-icons-typescript',
-    },
-    {
-      label: 'Python',
-      icon: 'i-simple-icons-python',
-    },
-    {
-      label: 'PHP',
-      icon: 'i-simple-icons-php',
-    },
-    {
-      label: 'Bash',
-      icon: 'i-simple-icons-gnubash',
-    },
-  ],
-  frameworkLibrary: [
-    {
-      label: 'Vue',
-      icon: 'i-simple-icons-vuedotjs',
-    },
-    {
-      label: 'Nuxt',
-      icon: 'i-simple-icons-nuxtdotjs',
-    },
-    {
-      label: 'React JS',
-      icon: 'i-simple-icons-react',
-    },
-    {
-      label: 'Next',
-      icon: 'i-simple-icons-nextdotjs',
-    },
-    {
-      label: 'Laravel',
-      icon: 'i-simple-icons-laravel',
-    },
-    {
-      label: 'Express',
-      icon: 'i-simple-icons-express',
-    },
-    {
-      label: 'Tailwind CSS',
-      icon: 'i-simple-icons-tailwindcss',
-    },
-    {
-      label: 'Pinia',
-      icon: 'i-simple-icons-pinia',
-    },
-    {
-      label: 'Chart JS',
-      icon: 'i-simple-icons-chartdotjs',
-    },
-    {
-      label: 'Prisma',
-      icon: 'i-simple-icons-prisma',
-    },
-    {
-      label: 'Konva',
-      icon: 'i-simple-icons-konva',
-    },
-  ],
-  toolSoftware: [
-    {
-      label: 'Git',
-      icon: 'i-simple-icons-git',
-    },
-    {
-      label: 'Docker',
-      icon: 'i-simple-icons-docker',
-    },
-    {
-      label: 'Postman',
-      icon: 'i-simple-icons-postman',
-    },
-    {
-      label: 'Figma',
-      icon: 'i-simple-icons-figma',
-    },
-    {
-      label: 'Photoshop',
-      icon: 'i-simple-icons-adobe',
-    },
-  ],
-  database: [
-    {
-      label: 'MySQL',
-      icon: 'i-simple-icons-mysql',
-    },
-    {
-      label: 'PostgreSQL',
-      icon: 'i-simple-icons-postgresql',
-    },
-    {
-      label: 'SQLite',
-      icon: 'i-simple-icons-sqlite',
-    },
-    {
-      label: 'MongoDB',
-      icon: 'i-simple-icons-mongodb',
-    },
-  ],
-}
 
 function calculateDurationByIdx(idx: number, secMultiplier = 100, initialSec = 300) {
   return initialSec + (secMultiplier * idx)
@@ -147,7 +27,7 @@ function calculateDurationByIdx(idx: number, secMultiplier = 100, initialSec = 3
               What I'm good at -
             </h3>
             <ul flex="~ col" gap="2 lg:6" overflow="hidden">
-              <li v-for="(items, key, i) in stacks" :key="key" flex="~ col" gap="1">
+              <li v-for="(items, key, i) in STACKS" :key="key" flex="~ col" gap="1">
                 <div class="background-diagonal" transition="composite" ease="inoutquint" origin="bottom" delay="300" :class="`duration-${calculateDurationByIdx(i, 300, 100)} ${!isVisible && 'scale-y-0'}`">
                   <span font="jetBMono extrabold" text="background xs" bg="foreground" w="fit" p="x-2" class="curly-braces">
                     {{ key }}
@@ -156,9 +36,9 @@ function calculateDurationByIdx(idx: number, secMultiplier = 100, initialSec = 3
                 <ul grid="~ cols-3 md:cols-4 lg:cols-6" gap="x-2 y-1" transition="composite" ease="outexpo" bg="linear-to-r" class="from-transparent via-foreground/5" :class="`duration-${calculateDurationByIdx(i, 500)} ${!isVisible && 'translate-x-full'}`">
                   <li v-for="item in items" :key="item.icon" flex gap="2" class="items-center" text="xs sm:base xl:lg" font="medium" tracking="wide">
                     <div :class="`${item.icon} duration-${calculateDurationByIdx(i, 100)} ${!isVisible && 'rotate-360'}`" />
-                    <h5 truncate>
+                    <h4 truncate>
                       {{ item.label }}
-                    </h5>
+                    </h4>
                   </li>
                 </ul>
               </li>
@@ -189,7 +69,7 @@ function calculateDurationByIdx(idx: number, secMultiplier = 100, initialSec = 3
 
 <style scoped>
 .background-diagonal {
-  background-image: var(--image-diagonal-lines);
+  background-image: var(--images-pattern-diagonal-lines);
   background-color: transparent;
   background-attachment: fixed;
 }
