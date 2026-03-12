@@ -1,24 +1,11 @@
 <script setup lang="ts">
+import { WORKS } from '~/constants'
+
 const { t } = useI18n()
 
 useHead({
   title: () => t('button.home'),
 })
-
-const works = [
-  {
-    label: 'SIM WEB',
-    href: '/work/sim-web',
-  },
-  {
-    label: 'Stage Two',
-    href: '/work/stage-two',
-  },
-  {
-    label: 'OG Tool',
-    href: '/work/og-tool',
-  },
-]
 </script>
 
 <template>
@@ -47,8 +34,8 @@ const works = [
       <div flex="~ 1 col">
         <h1>{{ t('home.section_2.title') }}</h1>
         <ul class="border">
-          <li v-for="work in works" :key="work.href" class="font-extrabold uppercase from-transparent bg-linear-to-r hover:(text-black to-primary)">
-            <RouterLink :to="work.href" block>
+          <li v-for="work in WORKS" :key="work.href" class="font-extrabold uppercase from-transparent bg-linear-to-r hover:(text-black to-primary)">
+            <RouterLink :to="work.href || ''" block>
               <span class="text-5xl">{{ work.label }}</span>
             </RouterLink>
           </li>

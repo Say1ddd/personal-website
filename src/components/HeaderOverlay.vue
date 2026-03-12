@@ -1,64 +1,11 @@
 <script setup lang="ts">
+import type { LabelHrefItem } from '~/types'
 import { useInjectedScroll } from '~/composables/useInjectedScroll'
+import { HEADER } from '~/constants'
 
 const { isOnTop, isOnBottom } = useInjectedScroll()
 
 const route = useRoute()
-
-interface HeaderItem {
-  label: string
-  href?: string
-}
-
-const headerContent: HeaderItem[][][] = [
-  [
-    [
-      {
-        label: 'Sajid Ikhlas',
-      },
-      {
-        label: 'Web Developer',
-      },
-    ],
-    [
-      {
-        label: 'Yogyakarta, Indonesia',
-      },
-      {
-        label: 'hello@sikhlas.com',
-        href: 'mailto:hello@sikhlas.com',
-      },
-    ],
-    [
-      {
-        label: 'About',
-        href: '/about',
-      },
-      {
-        label: 'Resume',
-        href: '/resume',
-      },
-    ],
-  ],
-  [
-    [
-      {
-        label: 'Instagram',
-        href: 'https://www.instagram.com/say1ddd/',
-      },
-    ],
-    [
-      {
-        label: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/sajid-ikhlas/',
-      },
-      {
-        label: 'Github',
-        href: 'https://www.github.com/say1ddd/',
-      },
-    ],
-  ],
-]
 
 function isExternalUrl(url: string, includeMailtoUrl = false) {
   try {
@@ -72,8 +19,8 @@ function isExternalUrl(url: string, includeMailtoUrl = false) {
   }
 }
 
-function getHrefNumLabel(current: HeaderItem) {
-  const valid = headerContent
+function getHrefNumLabel(current: LabelHrefItem) {
+  const valid = HEADER
     .flat(2)
     .filter(item => typeof item.href === 'string' && item.href.length > 0 && !item.href.toLowerCase().startsWith('mailto:'))
 
@@ -91,7 +38,7 @@ const notTopBottom = computed(() => {
 <template>
   <header gap="1.5" transition="composite" duration="500" lg="flex flex-col translate-y-0 justify-end opacity-100" :class="!isOnBottom && `translate-y-40 opacity-0`">
     <div flex gap="4 lg:16" text="sm" class="justify-between md:items-end">
-      <section v-for="(section, i) in headerContent" :key="i" transition="composite" duration="500" first="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-(x-8 y-4)" last="flex-(~ wrap) flex-col lg:flex-row items-start md:items-end justify-end gap-2 lg:gap-8" class="max-w-fit" :class="notTopBottom && `swipe-left`">
+      <section v-for="(section, i) in HEADER" :key="i" transition="composite" duration="500" first="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-(x-8 y-4)" last="flex-(~ wrap) flex-col lg:flex-row items-start md:items-end justify-end gap-2 lg:gap-8" class="max-w-fit" :class="notTopBottom && `swipe-left`">
         <div v-for="(card, idx) in section" :key="idx" flex="~ col" w="40" gap="1.5">
           <template v-for="item in card" :key="item.label">
             <template v-if="item.href">
