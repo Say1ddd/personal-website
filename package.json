@@ -28,6 +28,7 @@
     "@iconify-json/carbon": "catalog:dev",
     "@iconify-json/simple-icons": "catalog:dev",
     "@intlify/unplugin-vue-i18n": "catalog:build",
+    "@types/node": "catalog:types",
     "@types/nprogress": "catalog:types",
     "@unocss/eslint-config": "catalog:build",
     "@vitejs/plugin-vue": "catalog:build",

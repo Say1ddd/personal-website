@@ -48,6 +48,7 @@ catalogs:
     vue-router: ^4.5.0
 
   types:
+    '@types/node': ^25.4.0
     '@types/nprogress': ^0.2.3
 
 onlyBuiltDependencies:
