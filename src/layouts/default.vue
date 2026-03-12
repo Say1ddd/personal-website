@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { UseScrollReturn } from '@vueuse/core'
+import { scrollKey } from '~/keys/scroll'
 
 const route = useRoute()
 
@@ -8,6 +9,7 @@ const isInRoot = computed(() => route.path === '/')
 // composable init
 const el = useTemplateRef<HTMLElement>('scrollRef')
 const scrollReturn: UseScrollReturn = useScroll(el)
+provide(scrollKey, scrollReturn)
 
 // composable won't work on the same level as initialization
 const { arrivedState, measure } = scrollReturn
