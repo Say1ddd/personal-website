@@ -48,25 +48,18 @@ function isSocialSection(key: string) {
           :key="section._label"
           class="flex-1"
         >
-          <section flex="~ col" p="2.5" class="gap-2 sm:max-w-60">
-            <h2 text="lg xl:xl" class="section-line font-bold tracking-wider">
-              {{ rt(section._label) }}
-            </h2>
+          <AboutSection :title="resolveT(section._label)" capitalize>
             <ul gap="4 xl:6" flex="~ col">
               <li v-for="item in section.items" :key="item.title" class="group list-decoration">
-                <div v-if="isSocialSection(section._label)" flex="~ col">
-                  <ExternalIndicator />
+                <SocialCard v-if="isSocialSection(section._label)">
                   <SocialLink
                     :title="rt(item.title)"
                     :subtitle="rt(item.subtitle)"
                     :href="getSocialLink(item.title)"
                     :icon-type="resolveT(item.title) !== 'linkedin' ? 'at' : 'link'"
                   />
-                </div>
-                <div v-else flex="~ col" class="gap-1">
-                  <h3 class="leading-loose tracking-wider">
-                    {{ rt(item.title) }}
-                  </h3>
+                </SocialCard>
+                <DefaultCard v-else :title="resolveT(item.title)" capitalize>
                   <ul v-if="item.subtitle.length > 0">
                     <li v-for="value in item.subtitle" :key="value">
                       <h4 class="text-sm leading-relaxed tracking-wider opacity-80 truncate">
@@ -77,17 +70,14 @@ function isSocialSection(key: string) {
                   <span v-else class="text-sm leading-relaxed tracking-wider opacity-80">
                     {{ rt(item.subtitle) }}
                   </span>
-                </div>
+                </DefaultCard>
               </li>
             </ul>
-          </section>
+          </AboutSection>
         </div>
       </div>
     </div>
-    <AboutFooter />
-    <!--
     <BackgroundText>ABOUT ME</BackgroundText>
-    -->
   </div>
 </template>
 

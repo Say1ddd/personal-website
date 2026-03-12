@@ -12,7 +12,6 @@ import { defineConfig } from 'vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 import generateSitemap from 'vite-ssg-sitemap'
-import 'vitest/config'
 
 export default defineConfig({
   resolve: {
@@ -86,12 +85,6 @@ export default defineConfig({
     VueDevTools(),
   ],
 
-  // https://github.com/vitest-dev/vitest
-  test: {
-    include: ['test/**/*.test.ts'],
-    environment: 'jsdom',
-  },
-
   // https://github.com/antfu/vite-ssg
   ssgOptions: {
     script: 'async',
@@ -100,7 +93,9 @@ export default defineConfig({
       reduceInlineStyles: false,
     },
     onFinished() {
-      generateSitemap()
+      generateSitemap({
+        hostname: 'https://sikhlas.com/',
+      })
     },
   },
 

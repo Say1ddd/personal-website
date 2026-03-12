@@ -1,12 +1,20 @@
 :root,
 :host {
-  --color-primary: rgba(253, 253, 31, 1);
-  --color-background: rgba(250, 255, 255, 1);
-  --color-foreground: rgba(23, 23, 23, 1);
+  --transition-composite: transform, translate, scale, rotate, opacity;
+
+  --color-primary: rgba(255, 115, 185, 1);
+  --color-background: rgba(236, 237, 238, 1);
+  --color-foreground: rgba(18, 18, 18, 1);
 
   --image-graph-paper: url('/assets/patterns/graph-paper.svg');
   --image-diagonal-lines: url('/assets/patterns/diagonal-lines.svg');
   --image-texture: url('/assets/patterns/texture.svg');
+
+  /* curves */
+  --ease-io-quint: cubic-bezier(0.83, 0, 0.17, 1);
+  --ease-io-circ: cubic-bezier(0.85, 0, 0.15, 1);
+  --ease-o-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-o-back: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 :focus-visible {
@@ -16,7 +24,7 @@
 }
 
 html.dark {
-  --color-primary: rgba(34, 187, 255, 1);
+  --color-primary: rgba(102, 255, 217, 1);
   --color-background: rgba(19, 20, 21, 1);
   --color-foreground: rgba(237, 237, 237, 1);
 
@@ -60,7 +68,8 @@ html.dark {
 /* named transitions */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s;
+  transition-property: var(--transition-composite);
+  transition-duration: 0.5s;
 }
 
 .fade-enter-from,
@@ -108,7 +117,9 @@ html.dark {
 
 .slide-y-enter-active,
 .slide-y-leave-active {
-  transition: all 0.1s ease;
+  transition-property: var(--transition-composite);
+  transition-duration: 0.1s;
+  transition-timing-function: ease;
 }
 
 .slide-y-enter-from {

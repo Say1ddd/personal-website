@@ -11,7 +11,7 @@
     },
     "resolveJsonModule": true,
     "types": [
-      "vitest",
+      "node",
       "vite/client",
       "vite-plugin-vue-layouts/client",
       "unplugin-vue-macros/macros-global",
@@ -33,5 +33,5 @@
       "@vue-macros/volar/define-slots"
     ]
   },
-  "exclude": ["dist", "node_modules", "cypress"]
+  "exclude": ["dist", "node_modules"]
 }
