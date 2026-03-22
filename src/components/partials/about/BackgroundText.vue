@@ -11,7 +11,7 @@ const isVisible = useElementVisibility(ref)
 <template>
   <div ref="ref" aria-hidden="true" class="wrapper">
     <div transition="composite" duration="2000" class="curtain" :class="isVisible ? '-translate-y-full' : 'translate-y-none'" />
-    <span class="background-text text-20 leading-none font-fugazOne pointer-events-none truncate 2xl:text-80 lg:text-56 md:text-40 sm:text-36">
+    <span class="background-text text-20 leading-none font-fugaz-one pointer-events-none truncate 2xl:text-80 lg:text-56 md:text-40 sm:text-36">
       <slot>
         {{ text }}
       </slot>
