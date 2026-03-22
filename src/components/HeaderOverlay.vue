@@ -46,7 +46,7 @@ const returnInert = computed(() => {
 </script>
 
 <template>
-  <header :inert="returnInert" gap="1.5" transition="composite" duration="500" lg="flex flex-col translate-y-0 justify-end opacity-100" :class="!isOnBottom && `translate-y-40 opacity-0`">
+  <header :inert="returnInert" gap="1.5" transition="composite" duration="500" lg="flex flex-col translate-y-0 justify-end opacity-100" :class="!isOnBottom && `translate-y-80 md:opacity-0`">
     <div flex gap="4 lg:16" text="sm" class="justify-between md:items-end">
       <section v-for="(section, i) in HEADER" :key="i" transition="composite" duration="500" first="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-(x-8 y-4)" last="flex-(~ wrap) flex-col lg:flex-row items-start md:items-end justify-end gap-2 lg:gap-8" class="max-w-fit" :class="notTopBottom && `swipe-left`">
         <div v-for="(card, idx) in section" :key="idx" flex="~ col" w="40" gap="1.5">
