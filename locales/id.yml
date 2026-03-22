@@ -1,5 +1,7 @@
+scroll: Scroll ke bawah
 button:
-  about: Tentang
+  about: Tentang Aku
+  resume: Lihat Resume
   back: Kembali
   go: Pergi
   up-next: Selanjutnya
@@ -23,7 +25,9 @@ footer:
 
 # content
 home:
-  section_1: Aku percaya bahwa ide berupa code, desain, dan rasa ingin tahu mampu menciptakan produk yang bermanfaat untuk semua
+  section_1:
+    whoami: Aku
+    title: Aku mewujudkan ide, desain, dan rasa ingin tahu dalam bentuk code, dan mengubahnya menjadi produk yang sempurna.
   section_2:
     title: Karya yang sedang kukerjakan baru-baru ini
     subtitle: Dan masih banyak lagi

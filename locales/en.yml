@@ -1,5 +1,7 @@
+scroll: Scroll down
 button:
-  about: About
+  about: About Me
+  resume: View Resume
   back: Back
   go: GO
   up-next: Up Next
@@ -23,7 +25,9 @@ footer:
 
 # content
 home:
-  section_1: I believe that ideas in the form of code, design, and curiosity can build products that benefit everyone
+  section_1:
+    whoami: I'm a
+    title: I build idea, design, and curiosity in the form of code, and turning them into beautifully crafted products.
   section_2:
     title: What I've been working on recently
     subtitle: And many more
