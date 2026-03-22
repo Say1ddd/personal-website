@@ -2,9 +2,14 @@
 :host {
   --property-composite: transform, translate, scale, rotate, opacity;
 
-  --color-primary: rgba(255, 115, 185, 1);
-  --color-background: rgba(236, 237, 238, 1);
-  --color-foreground: rgba(18, 18, 18, 1);
+  --color-primary: rgb(255, 115, 185);
+  --color-background: rgb(236, 237, 238);
+  --color-foreground: rgb(18, 18, 18);
+
+  /* raw variant for combination with <alpha-value> */
+  --color-primary-raw: 255 115 185;
+  --color-background-raw: 236 237 238;
+  --color-foreground-raw: 18 18 18;
 
   --images-pattern-graph-paper: url('/assets/patterns/graph-paper.svg');
   --images-pattern-diagonal-lines: url('/assets/patterns/diagonal-lines.svg');
@@ -24,9 +29,14 @@
 }
 
 html.dark {
-  --color-primary: rgba(102, 255, 217, 1);
-  --color-background: rgba(19, 20, 21, 1);
-  --color-foreground: rgba(237, 237, 237, 1);
+  --color-primary: rgb(102, 255, 217);
+  --color-background: rgb(19, 20, 21);
+  --color-foreground: rgb(237, 237, 237);
+
+  /* raw variant for combination with <alpha-value> */
+  --color-primary-raw: 102 255 217;
+  --color-background-raw: 19 20 21;
+  --color-foreground-raw: 237 237 237;
 
   /* avoiding mask in body */
   --images-pattern-graph-paper: url('/assets/patterns/graph-paper-dark.svg');

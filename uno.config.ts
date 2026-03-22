@@ -19,6 +19,10 @@ export default defineConfig({
     ['heading-3', 'text-lg lg:text-2xl md:text-xl'],
     ['heading-4', 'text-base lg:text-xl md:text-lg'],
     ['section-idx', 'p-4 flex snap-(always center) h-full'],
+    ['absolute-overlay', 'absolute inset-0'],
+    ['flex-centered', 'flex items-center justify-center'],
+    ['events-none', 'pointer-events-none select-none'],
+    ['wrap', 'container px-3 md:px-4'],
   ],
   theme: {
     colors: {
@@ -45,19 +49,19 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        manrope: [
+        'manrope': [
           {
             name: 'Manrope',
             weights: ['200', '400', '500', '800'],
           },
         ],
-        jetBMono: [
+        'jetbrains-mono': [
           {
             name: 'JetBrains Mono',
             weights: ['400', '800'],
           },
         ],
-        fugazOne: 'Fugaz One',
+        'fugaz-one': 'Fugaz One',
         // plaster: 'Plaster',
         // climateCrisis: 'Climate Crisis',
       },
