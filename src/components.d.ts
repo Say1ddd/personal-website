@@ -15,6 +15,7 @@ declare module 'vue' {
     FooterBackground: typeof import('./components/partials/FooterBackground.vue')['default']
     FooterOverlay: typeof import('./components/FooterOverlay.vue')['default']
     HeaderOverlay: typeof import('./components/HeaderOverlay.vue')['default']
+    IndexSecondSection: typeof import('./components/partials/index/IndexSecondSection.vue')['default']
     IndexThirdSection: typeof import('./components/partials/index/IndexThirdSection.vue')['default']
     LayoutDivider: typeof import('./components/partials/LayoutDivider.vue')['default']
     NavOverlay: typeof import('./components/NavOverlay.vue')['default']
