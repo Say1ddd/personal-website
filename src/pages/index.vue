@@ -8,6 +8,7 @@ useHead({
 
 <template>
   <div class="relative" overflow="x-hidden y-auto" h="full" snap="y mandatory">
+    <ScrollIndicator />
     <section class="section-idx">
       <div class="items-center justify-center" flex="~ 1" p="4">
         <div container flex="~ col" gap="4" border="l-4 primary" class="pl-4 container">
