@@ -3,6 +3,8 @@ import { breakpointsTailwind } from '@vueuse/core'
 import { useInjectedScroll } from '~/composables/useInjectedScroll'
 
 const { isOnTop, isOnBottom } = useInjectedScroll()
+const { isSidebarOpen } = useInjectedSidebar()
+
 const notTopBottom = computed(() => {
   return !isOnTop.value && !isOnBottom.value
 })
@@ -21,8 +23,8 @@ const onLgBreakpoint = computed(() => {
 </script>
 
 <template>
-  <RouterLink to="/" flex gap="12" pointer-events="auto" select="none" class="swipe" :class="onLgBreakpoint ? `scale-80` : `to-bottom`">
-    <h1 :data-scrolled="onLgBreakpoint" aria-label="SIkhlas" aria-description="Sajid Ikhlas Personal Website Title Logo" truncate tracking="wider" font="extralight" text="5xl nowrap" select="none" class="title">
+  <RouterLink to="/" pointer-events="auto" select="none" class="swipe" :class="onLgBreakpoint || isSidebarOpen ? `scale-90 sm:scale-100 lg:scale-80` : `*:scale-125 *:sm:scale-100 to-bottom`">
+    <h1 :data-scrolled="onLgBreakpoint" aria-label="SIkhlas" aria-description="Sajid Ikhlas Personal Website Title Logo" truncate tracking="wider" transition="composite" font="extralight" text="3xl sm:5xl nowrap" select="none" class="title">
       <span>S<span tracking="widest" class="widen">I</span>k</span>hlas
     </h1>
   </RouterLink>
@@ -37,7 +39,8 @@ const onLgBreakpoint = computed(() => {
 }
 
 .to-bottom {
-  transform: translateY(calc(100dvh - 100% - 13rem)) translateX(calc(100vw - 100% - 2rem - 1rem - 1rem / 2));
+  transform: translateY(calc(100dvh - 100% - 13rem - 1rem))
+    translateX(calc(100vw - 100% - 2rem - 1rem - 1rem / 2 - 1rem));
 }
 @media (min-width: 640px) {
   .to-bottom {
@@ -47,7 +50,7 @@ const onLgBreakpoint = computed(() => {
 /* 784px instead of 768px for flex wrapping footer content */
 @media (min-width: 768px) {
   .to-bottom {
-    transform: translateY(calc(100dvh - 100% - 7.5rem));
+    transform: translateY(calc(100dvh - 100% - 7.5rem - 1rem / 2));
   }
 }
 
