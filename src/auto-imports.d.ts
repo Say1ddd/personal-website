@@ -193,6 +193,7 @@ declare global {
   const useImage: typeof import('@vueuse/core')['useImage']
   const useInfiniteScroll: typeof import('@vueuse/core')['useInfiniteScroll']
   const useInjectedScroll: typeof import('./composables/useInjectedScroll')['useInjectedScroll']
+  const useInjectedSidebar: typeof import('./composables/useInjectedSidebar')['useInjectedSidebar']
   const useIntersectionObserver: typeof import('@vueuse/core')['useIntersectionObserver']
   const useInterval: typeof import('@vueuse/core')['useInterval']
   const useIntervalFn: typeof import('@vueuse/core')['useIntervalFn']
@@ -508,6 +509,7 @@ declare module 'vue' {
     readonly useImage: UnwrapRef<typeof import('@vueuse/core')['useImage']>
     readonly useInfiniteScroll: UnwrapRef<typeof import('@vueuse/core')['useInfiniteScroll']>
     readonly useInjectedScroll: UnwrapRef<typeof import('./composables/useInjectedScroll')['useInjectedScroll']>
+    readonly useInjectedSidebar: UnwrapRef<typeof import('./composables/useInjectedSidebar')['useInjectedSidebar']>
     readonly useIntersectionObserver: UnwrapRef<typeof import('@vueuse/core')['useIntersectionObserver']>
     readonly useInterval: UnwrapRef<typeof import('@vueuse/core')['useInterval']>
     readonly useIntervalFn: UnwrapRef<typeof import('@vueuse/core')['useIntervalFn']>

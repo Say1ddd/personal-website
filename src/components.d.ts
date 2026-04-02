@@ -30,6 +30,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollIndicator: typeof import('./components/partials/ScrollIndicator.vue')['default']
+    SidebarOverlay: typeof import('./components/SidebarOverlay.vue')['default']
     SocialCard: typeof import('./components/partials/about/SocialCard.vue')['default']
     SocialLink: typeof import('./components/partials/about/SocialLink.vue')['default']
     ToggleButton: typeof import('./components/partials/ToggleButton.vue')['default']

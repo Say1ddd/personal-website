@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { UseScrollReturn } from '@vueuse/core'
 import { scrollKey } from '~/keys/scroll'
+import { isSidebarOpenKey } from '~/keys/sidebar'
 
 const route = useRoute()
 
@@ -16,7 +17,7 @@ const { arrivedState, measure } = scrollReturn
 const { bottom: isOnBottom } = toRefs(arrivedState)
 
 const transitionClass = {
-  enterFromLeaveTo: 'opacity-0 rotate-90 translate-x-24',
+  enterFromLeaveTo: 'opacity-0 rotate-90 translate-x-32',
   enterToLeaveFrom: 'opacity-100 rotate-0 translate-x-none',
   enterActive: 'transition-composite pointer-events-none duration-500 delay-300',
   leaveActive: 'transition-composite pointer-events-none duration-300 delay-500',
@@ -31,13 +32,16 @@ router.afterEach(() => {
   console.info('afterEach after 1 second timeout')
 })
 */
+
+const isSidebarOpen = ref(false)
+provide(isSidebarOpenKey, isSidebarOpen)
 </script>
 
 <template>
   <div>
     <!-- top overlay -->
-    <div w="full" fixed z="30" top="0" pointer-events="none">
-      <div m="x-4" p="x-4" translate-y="4">
+    <div flex="~ col" w="full" fixed z="30" top="0" pointer-events="none">
+      <div m="x-4" p="y-2 x-4" class="translate-y-4">
         <NavOverlay>
           <template #left>
             <AppLogo />
@@ -59,8 +63,15 @@ router.afterEach(() => {
       </div>
     </div>
 
+    <!-- sidebar overlay -->
+    <SidebarOverlay transition="composite duration-500 ease-out-expo" :class="!isSidebarOpen && `translate-x-full events-none opacity-0`" />
+    <!-- dismiss overlay -->
+    <Transition mode="out-in" name="fade">
+      <div v-show="isSidebarOpen" absolute z="20" class="bg-black/50 inset-0" @click="isSidebarOpen = false" />
+    </Transition>
+
     <!-- content -->
-    <main h="dvh lg:screen *:full" overflow="hidden" z="1" relative class="min-w-0">
+    <main :inert="isSidebarOpen" h="dvh lg:screen *:full" overflow="hidden" z="1" relative class="min-w-0">
       <RouterView v-slot="{ Component, route: r }">
         <Transition name="fade-reveal" mode="out-in" @after-enter="measure">
           <component :is="Component" ref="scrollRef" :key="r.path" />
