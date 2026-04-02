@@ -81,12 +81,8 @@ provide(isSidebarOpenKey, isSidebarOpen)
 
     <!-- bottom overlay -->
     <div bottom="0" fixed pointer-events="none" w="full" z="25">
-      <div translate-y="-4" flex="~ col" gap="4 sm:0">
-        <!-- fuck firefox -->
-        <FooterBackground inset-0 absolute z="5" bg="primary" transition="composite" duration="1000" ease="out-expo" :class="isOnBottom ? `opacity-100 -translate-y-2 sm:-translate-y-16 md:-translate-y-8 lg:-translate-y-16` : `opacity-0 translate-y-1/10`" />
-        <FooterBackground inset-0 absolute z="5" bg="background" transition="composite" duration="1000" ease="in-out-circ" border="4 t-primary transparent" :class="isOnBottom ? `opacity-100 -translate-y-2 sm:-translate-y-16 md:-translate-y-8 lg:-translate-y-16` : `opacity-0 translate-y-1/4 lg:translate-y-1/10`" />
-
-        <HeaderOverlay lowercase relative z="10" m="x-4" p="x-0 sm:x-4" />
+      <div :data-open="isOnBottom && !isSidebarOpen" translate-y="-4" flex="~ col" gap="4 sm:0" class="footer-background">
+        <HeaderOverlay :inert="isSidebarOpen" lowercase relative z="10" m="x-4" p="x-0 sm:x-4" />
         <FooterOverlay relative z="10" transition="composite" duration="300" ease="out-back" m="sm:(x-4 y-0)" p="sm:x-4" :class="!isOnBottom ? `mx-4 p-2 sm:px-4 opacity-50 hover:opacity-75` : `mx-2 opacity-75 translate-y-2`" />
       </div>
     </div>
@@ -112,6 +108,64 @@ provide(isSidebarOpenKey, isSidebarOpen)
 </template>
 
 <style scoped>
+.footer-background::before,
+.footer-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  transition-property: var(--property-composite);
+  transition-duration: 1s;
+  transition-timing-function: var(--ease-o-expo);
+  height: 100vh;
+  pointer-events: none;
+}
+
+.footer-background::before {
+  background-color: var(--color-primary);
+}
+
+.footer-background::after {
+  background-color: var(--color-background);
+  border-top: 4px solid var(--color-primary);
+}
+
+.footer-background[data-open='false']::before,
+.footer-background[data-open='false']::after {
+  transform: translateY(10%);
+  opacity: 0;
+}
+
+.footer-background[data-open='true']::after {
+  transition-delay: 0.3s;
+}
+
+.footer-background[data-open='true']::before,
+.footer-background[data-open='true']::after {
+  transform: translateY(-0.5rem);
+}
+
+@media (min-width: 640px) {
+  .footer-background[data-open='true']::before,
+  .footer-background[data-open='true']::after {
+    transform: translateY(-4rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-background[data-open='true']::before,
+  .footer-background[data-open='true']::after {
+    transform: translateY(-2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-background[data-open='true']::before,
+  .footer-background[data-open='true']::after {
+    transform: translateY(-4rem);
+  }
+}
+
 /* named transitions */
 .scale-up-enter-active,
 .scale-up-leave-active,
