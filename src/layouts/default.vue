@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { UseScrollReturn } from '@vueuse/core'
 import { scrollKey } from '~/keys/scroll'
+import { isSidebarOpenKey } from '~/keys/sidebar'
 
 const route = useRoute()
 
@@ -16,7 +17,7 @@ const { arrivedState, measure } = scrollReturn
 const { bottom: isOnBottom } = toRefs(arrivedState)
 
 const transitionClass = {
-  enterFromLeaveTo: 'opacity-0 rotate-90 translate-x-24',
+  enterFromLeaveTo: 'opacity-0 rotate-90 translate-x-32',
   enterToLeaveFrom: 'opacity-100 rotate-0 translate-x-none',
   enterActive: 'transition-composite pointer-events-none duration-500 delay-300',
   leaveActive: 'transition-composite pointer-events-none duration-300 delay-500',
@@ -31,13 +32,16 @@ router.afterEach(() => {
   console.info('afterEach after 1 second timeout')
 })
 */
+
+const isSidebarOpen = ref(false)
+provide(isSidebarOpenKey, isSidebarOpen)
 </script>
 
 <template>
   <div>
     <!-- top overlay -->
-    <div w="full" fixed z="30" top="0" pointer-events="none">
-      <div m="x-4" p="x-4" translate-y="4">
+    <div flex="~ col" w="full" fixed z="30" top="0" pointer-events="none">
+      <div m="x-4" p="y-2 x-4" class="translate-y-4">
         <NavOverlay>
           <template #left>
             <AppLogo />
@@ -59,8 +63,15 @@ router.afterEach(() => {
       </div>
     </div>
 
+    <!-- sidebar overlay -->
+    <SidebarOverlay transition="composite duration-500 ease-out-expo" :class="!isSidebarOpen && `translate-x-full events-none opacity-0`" />
+    <!-- dismiss overlay -->
+    <Transition mode="out-in" name="fade">
+      <div v-show="isSidebarOpen" absolute z="20" class="bg-black/50 inset-0" @click="isSidebarOpen = false" />
+    </Transition>
+
     <!-- content -->
-    <main h="dvh lg:screen *:full" overflow="hidden" z="1" relative class="min-w-0">
+    <main :inert="isSidebarOpen" h="dvh lg:screen *:full" overflow="hidden" z="1" relative class="min-w-0">
       <RouterView v-slot="{ Component, route: r }">
         <Transition name="fade-reveal" mode="out-in" @after-enter="measure">
           <component :is="Component" ref="scrollRef" :key="r.path" />
@@ -70,12 +81,8 @@ router.afterEach(() => {
 
     <!-- bottom overlay -->
     <div bottom="0" fixed pointer-events="none" w="full" z="25">
-      <div translate-y="-4" flex="~ col" gap="4 sm:0">
-        <!-- fuck firefox -->
-        <FooterBackground inset-0 absolute z="5" bg="primary" transition="composite" duration="1000" ease="out-expo" :class="isOnBottom ? `opacity-100 -translate-y-2 sm:-translate-y-16 md:-translate-y-8 lg:-translate-y-16` : `opacity-0 translate-y-1/10`" />
-        <FooterBackground inset-0 absolute z="5" bg="background" transition="composite" duration="1000" ease="in-out-circ" border="4 t-primary transparent" :class="isOnBottom ? `opacity-100 -translate-y-2 sm:-translate-y-16 md:-translate-y-8 lg:-translate-y-16` : `opacity-0 translate-y-1/4 lg:translate-y-1/10`" />
-
-        <HeaderOverlay lowercase relative z="10" m="x-4" p="x-0 sm:x-4" />
+      <div :data-open="isOnBottom && !isSidebarOpen" translate-y="-4" flex="~ col" gap="4 sm:0" class="footer-background">
+        <HeaderOverlay :inert="isSidebarOpen" lowercase relative z="10" m="x-4" p="x-0 sm:x-4" />
         <FooterOverlay relative z="10" transition="composite" duration="300" ease="out-back" m="sm:(x-4 y-0)" p="sm:x-4" :class="!isOnBottom ? `mx-4 p-2 sm:px-4 opacity-50 hover:opacity-75` : `mx-2 opacity-75 translate-y-2`" />
       </div>
     </div>
@@ -101,6 +108,64 @@ router.afterEach(() => {
 </template>
 
 <style scoped>
+.footer-background::before,
+.footer-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  transition-property: var(--property-composite);
+  transition-duration: 1s;
+  transition-timing-function: var(--ease-o-expo);
+  height: 100vh;
+  pointer-events: none;
+}
+
+.footer-background::before {
+  background-color: var(--color-primary);
+}
+
+.footer-background::after {
+  background-color: var(--color-background);
+  border-top: 4px solid var(--color-primary);
+}
+
+.footer-background[data-open='false']::before,
+.footer-background[data-open='false']::after {
+  transform: translateY(10%);
+  opacity: 0;
+}
+
+.footer-background[data-open='true']::after {
+  transition-delay: 0.3s;
+}
+
+.footer-background[data-open='true']::before,
+.footer-background[data-open='true']::after {
+  transform: translateY(-0.5rem);
+}
+
+@media (min-width: 640px) {
+  .footer-background[data-open='true']::before,
+  .footer-background[data-open='true']::after {
+    transform: translateY(-4rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-background[data-open='true']::before,
+  .footer-background[data-open='true']::after {
+    transform: translateY(-2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-background[data-open='true']::before,
+  .footer-background[data-open='true']::after {
+    transform: translateY(-4rem);
+  }
+}
+
 /* named transitions */
 .scale-up-enter-active,
 .scale-up-leave-active,

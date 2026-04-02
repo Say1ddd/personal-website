@@ -1,65 +1,77 @@
 <script setup lang="ts">
 interface PropType {
-  truthyLabel?: string
-  falsyLabel?: string
-  state: boolean
+  initialLabel?: string
+  toggledLabel?: string
+  state?: boolean
+  labelWidth?: number
 }
 
-const {
-  truthyLabel = 'true',
-  falsyLabel = 'false',
-} = defineProps<PropType>()
+const props = defineProps<PropType>()
+
+const returnWidth = computed(() => {
+  function setChWidth(value?: number) {
+    if (props.labelWidth || value)
+      return `${props.labelWidth || value}ch`
+    else return 'auto'
+  }
+
+  if (props.initialLabel && props.toggledLabel) {
+    if (props.initialLabel.length >= props.toggledLabel.length)
+      return setChWidth(props.initialLabel.length)
+    else return setChWidth(props.toggledLabel.length)
+  }
+  return setChWidth()
+})
 </script>
 
 <template>
-  <button class="group bottom-line p-2 flex gap-3 h-full truncate items-center overflow-y-clip">
-    <span aria-hidden="true" inline-block absolute transition="composite" bg="primary" pointer-events="none" duration="300" class="opacity-0 h-px w-full bottom-full group-hover:opacity-100" />
-    <span aria-hidden="true" inline-block absolute transition="composite" bg="primary" pointer-events="none" duration="300" class="opacity-0 h-1.5 w-1 top-0 group-hover:opacity-100" />
-    <slot />
-    <span aria-hidden="true" truncate transition="composite" tracking="wide" text="sm black" bg="primary" w="14" pointer-events="none" duration="300" class="state-label opacity-0" group-hover="visible rotate-none scale-90 opacity-100">
-      <Transition mode="out-in" name="slide-y">
-        <span v-if="state">{{ truthyLabel }}</span>
-        <span v-else>{{ falsyLabel }}</span>
-      </Transition>
+  <button class="wrapper text-xs cursor-pointer pointer-events-auto sm:text-base">
+    <span relative border="~ foreground/15" class="after-btn inline-block">
+      <span relative z="20" flex="~ items-center justify-between" gap="2" bg="background" p="x-3 y-2" class="font-jetbrains-mono overflow-hidden tabular-nums *:last:w-[--w]" :style="{ '--w': returnWidth }">
+        <slot>
+          <slot name="leading">
+            <span i="carbon-menu" block />
+            <span>menu</span>
+          </slot>
+          <slot name="content">
+            <template v-if="initialLabel && toggledLabel">
+              <Transition mode="out-in" name="slide-y">
+                <span v-if="state" inline-block>{{ initialLabel }}</span>
+                <span v-else inline-block>{{ toggledLabel }}</span>
+              </Transition>
+            </template>
+          </slot>
+        </slot>
+      </span>
     </span>
   </button>
 </template>
 
 <style scoped>
-.bottom-line::after {
-  content: '';
-  position: absolute;
-  z-index: 10;
-  top: 100%;
-  width: 10rem;
-  transform: translateY(2px) scaleX(0);
-  height: 6px;
+.wrapper:hover .after-btn::after {
+  transform-origin: center;
+  transform: scaleX(105%);
+  opacity: 100%;
+}
+
+.wrapper:active .after-btn::after {
+  transform-origin: center;
   background-color: var(--color-primary);
-  transform-origin: left;
+  transform: scaleX(110%) scaleY(55%);
+  opacity: 100%;
+}
+
+.after-btn::after {
+  content: '';
   transition-property: var(--property-composite);
   transition-duration: 0.5s;
-  transition-timing-function: ease-in-out;
-  pointer-events: none;
-}
-
-.bottom-line:hover::after {
-  transform: translateY(0) scaleX(100%);
-}
-
-.state-label {
+  transition-timing-function: var(--ease-o-back);
   position: absolute;
-  bottom: 100%;
-  right: 0;
+  inset: 0;
+  transform-origin: top;
+  background-color: var(--color-foreground);
+  transform: scaleY(105%);
   z-index: 10;
-  visibility: hidden;
-  text-transform: uppercase;
-  transform-origin: left;
-  rotate: calc(45deg / 2);
-  translate: 0 50%;
-}
-
-.state-label > * {
-  font-weight: 900;
-  display: block;
+  opacity: 50%;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <RouterLink to="/" pointer-events="auto" class="group border-none opacity-80 flex size-16 scale-80 items-center justify-center rounded-none! md:(opacity-100 scale-100)">
     <span class="sr-only">Previous</span>
-    <span aria-hidden="true" transition="composite" border="~ dashed" class="rotate-clockwise rounded-full h-full w-full duration-500 group-focus:(opacity-100 scale-100) group-hover:(opacity-100 scale-100) sm:(opacity-0 scale-75)" />
+    <span aria-hidden="true" transition="composite" border="~ dashed" bg="background" class="rotate-clockwise rounded-full h-full w-full duration-500 group-focus:(opacity-100 scale-100) group-hover:(opacity-100 scale-100) sm:(opacity-0 scale-75)" />
     <svg
       viewBox="0 0 128 128"
       aria-hidden="true"
