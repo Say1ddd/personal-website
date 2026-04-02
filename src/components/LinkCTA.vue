@@ -23,7 +23,7 @@ const spanClassName = 'text-(lg nowrap) tracking-widest font-bold select-none lg
 </script>
 
 <template>
-  <RouterLink relative :to="to" p="y-1 x-2 sm:y-2 sm:x-3" class="wrapper-img group/button text-center *:first:absolute-overlay" border="2" :class="wrapperColorMap[color]">
+  <RouterLink relative :to="to" active-class="*:first:opacity-0" p="y-1 x-2 sm:y-2 sm:x-3" class="wrapper-img group/button text-center *:first:absolute-overlay" border="2" :class="wrapperColorMap[color]">
     <slot name="overlay">
       <div aria-hidden="true" ease="out-expo" duration="500" transition="composite" class="flex-centered group-focus/button:opacity-0 group-hover/button:opacity-0" :class="overlayColorMap[color]">
         <span :class="spanClassName">{{ label }}</span>
