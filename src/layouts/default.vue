@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import type { UseScrollReturn } from '@vueuse/core'
-import { scrollKey } from '~/keys/scroll'
+import { scrollbarWidthKey, scrollKey } from '~/keys/scroll'
 import { isSidebarOpenKey } from '~/keys/sidebar'
 
 const route = useRoute()
 
 const isInRoot = computed(() => route.path === '/')
+const scrollbarWidth = ref(0)
+const isSidebarOpen = ref(false)
 
 // composable init
 const el = useTemplateRef<HTMLElement>('scrollRef')
 const scrollReturn: UseScrollReturn = useScroll(el)
-provide(scrollKey, scrollReturn)
 
 // composable won't work on the same level as initialization
 const { arrivedState, measure } = scrollReturn
@@ -33,8 +34,18 @@ router.afterEach(() => {
 })
 */
 
-const isSidebarOpen = ref(false)
+function setScrollbarWidth(value: number) {
+  scrollbarWidth.value = value
+}
+
+provide(scrollbarWidthKey, {
+  scrollbarWidth,
+  setScrollbarWidth,
+})
+provide(scrollKey, scrollReturn)
 provide(isSidebarOpenKey, isSidebarOpen)
+
+// TODO: match layout decor with browser scrollbar width, fix layout shifts, reset default scrollbar style
 </script>
 
 <template>
