@@ -32,7 +32,7 @@ declare global {
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
   const defineLoader: typeof import('vue-router/auto')['defineLoader']
-  const definePage: typeof import('unplugin-vue-router/runtime')['definePage']
+  const definePage: typeof import('vue-router/experimental')['definePage']
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
@@ -246,6 +246,7 @@ declare global {
   const useScroll: typeof import('@vueuse/core')['useScroll']
   const useScrollLock: typeof import('@vueuse/core')['useScrollLock']
   const useScrollStore: typeof import('./stores/scroll')['useScrollStore']
+  const useScrollbarWidth: typeof import('./composables/useScrollbarWidth')['default']
   const useSeoMeta: typeof import('@unhead/vue')['useSeoMeta']
   const useServerHead: typeof import('@unhead/vue')['useServerHead']
   const useServerHeadSafe: typeof import('@unhead/vue')['useServerHeadSafe']
@@ -350,6 +351,7 @@ declare module 'vue' {
     readonly debouncedWatch: UnwrapRef<typeof import('@vueuse/core')['debouncedWatch']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
+    readonly definePage: UnwrapRef<typeof import('vue-router/experimental')['definePage']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
@@ -561,6 +563,7 @@ declare module 'vue' {
     readonly useScriptTag: UnwrapRef<typeof import('@vueuse/core')['useScriptTag']>
     readonly useScroll: UnwrapRef<typeof import('@vueuse/core')['useScroll']>
     readonly useScrollLock: UnwrapRef<typeof import('@vueuse/core')['useScrollLock']>
+    readonly useScrollbarWidth: UnwrapRef<typeof import('./composables/useScrollbarWidth')['default']>
     readonly useSeoMeta: UnwrapRef<typeof import('@unhead/vue')['useSeoMeta']>
     readonly useServerHead: UnwrapRef<typeof import('@unhead/vue')['useServerHead']>
     readonly useServerHeadSafe: UnwrapRef<typeof import('@unhead/vue')['useServerHeadSafe']>
