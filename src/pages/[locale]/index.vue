@@ -4,6 +4,10 @@ import { scrollbarWidthKey } from '~/keys/scroll'
 
 const { t } = useI18n()
 
+definePage({
+  name: 'home',
+})
+
 useHead({
   title: () => t('button.home'),
 })

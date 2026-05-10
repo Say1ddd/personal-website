@@ -1,6 +1,6 @@
 <script setup lang="ts">
-defineOptions({
-  name: 'AboutPage',
+definePage({
+  name: 'about',
 })
 
 const { t, tm, rt } = useI18n()
@@ -54,7 +54,7 @@ function isSocialSection(key: string) {
                 <SocialCard v-if="isSocialSection(section._label)">
                   <SocialLink
                     :title="rt(item.title)"
-                    :subtitle="rt(item.subtitle)"
+                    :subtitle="rt(item.subtitle as string)"
                     :href="getSocialLink(item.title)"
                     :icon-type="resolveT(item.title) !== 'linkedin' ? 'at' : 'link'"
                   />
@@ -68,7 +68,7 @@ function isSocialSection(key: string) {
                     </li>
                   </ul>
                   <span v-else class="text-sm leading-relaxed tracking-wider opacity-80">
-                    {{ rt(item.subtitle) }}
+                    {{ rt(item.subtitle as string) }}
                   </span>
                 </DefaultCard>
               </li>
