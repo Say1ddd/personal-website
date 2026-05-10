@@ -3,24 +3,13 @@ import type { LabelItem } from '~/types'
 import { useInjectedScroll } from '~/composables/useInjectedScroll'
 import { useLocale } from '~/composables/useLocale'
 import { HEADER } from '~/constants'
+import { isExternalUrl } from '~/utils/isExternalUrl'
 
 const { currentLocale } = useLocale()
 const { isOnTop, isOnBottom } = useInjectedScroll()
 const { isSidebarOpen } = useInjectedSidebar()
 
 const route = useRoute()
-
-function isExternalUrl(url: string, includeMailtoUrl = false) {
-  try {
-    const parsed = new URL(url)
-    if (includeMailtoUrl && parsed.protocol === 'mailto:')
-      return true
-    return parsed.protocol === 'http:' || parsed.protocol === 'https:'
-  }
-  catch {
-    return false
-  }
-}
 
 function getHrefNumLabel(current: LabelItem) {
   const valid = HEADER
