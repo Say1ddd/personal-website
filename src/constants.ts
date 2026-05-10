@@ -1,32 +1,38 @@
 // @unocss-include
-import type { LabelHrefItem, Stack } from '~/types'
+import type { LabelItem, Stack } from '~/types'
 
-const HEADER: LabelHrefItem[][][] = [
+const HEADER: LabelItem[][][] = [
   [
     [
       {
         label: 'Sajid Ikhlas',
+        type: 'label',
       },
       {
         label: 'Web Developer',
+        type: 'label',
       },
     ],
     [
       {
         label: 'Yogyakarta, Indonesia',
+        type: 'label',
       },
       {
         label: 'hello@sikhlas.com',
+        type: 'link',
         href: 'mailto:hello@sikhlas.com',
       },
     ],
     [
       {
         label: 'About',
+        type: 'link',
         href: '/about',
       },
       {
         label: 'Resume',
+        type: 'link',
         href: '/resume',
       },
     ],
@@ -35,34 +41,40 @@ const HEADER: LabelHrefItem[][][] = [
     [
       {
         label: 'Instagram',
+        type: 'link',
         href: 'https://www.instagram.com/say1ddd/',
       },
     ],
     [
       {
         label: 'LinkedIn',
+        type: 'link',
         href: 'https://www.linkedin.com/in/sajid-ikhlas/',
       },
       {
         label: 'Github',
+        type: 'link',
         href: 'https://www.github.com/say1ddd/',
       },
     ],
   ],
 ]
 
-const WORKS: LabelHrefItem[] = [
+const WORKS: LabelItem[] = [
   {
-    label: 'SIM WEB',
-    href: '/work/sim-web',
+    label: 'Personal Website',
+    type: 'link',
+    href: 'personal-website',
   },
   {
     label: 'Stage Two',
-    href: '/work/stage-two',
+    type: 'link',
+    href: 'stage-two',
   },
   {
-    label: 'OG Tool',
-    href: '/work/og-tool',
+    label: 'SIM Web',
+    type: 'link',
+    href: 'sim-web',
   },
 ]
 
