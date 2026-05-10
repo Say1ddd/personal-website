@@ -14,8 +14,7 @@
       "node",
       "vite/client",
       "vite-plugin-vue-layouts/client",
-      "unplugin-vue-macros/macros-global",
-      "unplugin-vue-router/client"
+      "unplugin-vue-macros/macros-global"
     ],
     "allowJs": true,
     "strict": true,
@@ -30,7 +29,10 @@
   "vueCompilerOptions": {
     "plugins": [
       "@vue-macros/volar/define-models",
-      "@vue-macros/volar/define-slots"
+      "@vue-macros/volar/define-slots",
+      // causes typecheck error
+      // "vue-router/volar/sfc-typed-router",
+      "vue-router/volar/sfc-route-blocks"
     ]
   },
   "exclude": ["dist", "node_modules"]

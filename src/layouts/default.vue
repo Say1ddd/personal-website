@@ -5,7 +5,10 @@ import { isSidebarOpenKey } from '~/keys/sidebar'
 
 const route = useRoute()
 
-const isInRoot = computed(() => route.path === '/')
+const isHome = computed(() => {
+  return route.name === 'home'
+})
+
 const scrollbarWidth = ref(0)
 const isSidebarOpen = ref(false)
 
@@ -68,7 +71,7 @@ provide(isSidebarOpenKey, isSidebarOpen)
             :leave-from-class="transitionClass.enterToLeaveFrom"
             :leave-to-class="transitionClass.enterFromLeaveTo"
           >
-            <PreviousButton v-show="!isInRoot" :aria-hidden="isInRoot" />
+            <PreviousButton v-show="!isHome" :aria-hidden="isHome" />
           </Transition>
         </div>
       </div>
@@ -101,11 +104,11 @@ provide(isSidebarOpenKey, isSidebarOpen)
     <!-- decor -->
     <div aria-hidden="true" inset-0 fixed z="0" flex="~ col" pointer-events="none" transition="composite" duration="1000">
       <Transition name="slide-down" mode="out-in">
-        <LayoutDivider v-show="isInRoot" border="before:foreground/25 after:foreground/25 *:foreground/25" />
+        <LayoutDivider v-show="isHome" border="before:foreground/25 after:foreground/25 *:foreground/25" />
       </Transition>
       <Transition name="minimize" mode="out-in">
         <LayoutDivider
-          v-show="isInRoot"
+          v-show="isHome"
           border="before:foreground/25 after:foreground/25 *:foreground/25 *:t-none"
           rounded="*:b-lg"
           bg="*:background"

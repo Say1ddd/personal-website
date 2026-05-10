@@ -34,5 +34,10 @@ declare module 'vue' {
     SocialCard: typeof import('./components/partials/about/SocialCard.vue')['default']
     SocialLink: typeof import('./components/partials/about/SocialLink.vue')['default']
     ToggleButton: typeof import('./components/partials/ToggleButton.vue')['default']
+    WorkSectionHero: typeof import('./components/partials/work/WorkSectionHero.vue')['default']
+    WorkSectionImage: typeof import('./components/partials/work/WorkSectionImage.vue')['default']
+    WorkSectionNext: typeof import('./components/partials/work/WorkSectionNext.vue')['default']
+    WorkSectionQuote: typeof import('./components/partials/work/WorkSectionQuote.vue')['default']
+    WorkSectionText: typeof import('./components/partials/work/WorkSectionText.vue')['default']
   }
 }

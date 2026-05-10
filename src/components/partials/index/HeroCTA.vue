@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { useLocale } from '~/composables/useLocale'
+
 interface Prop {
   isVisible?: boolean
 }
 const { isVisible = false } = defineProps<Prop>()
 
+const { currentLocale } = useLocale()
 const { t } = useI18n()
 const ctaClassName = 'w-full scale-105 sm:w-sm'
 </script>
@@ -15,8 +18,8 @@ const ctaClassName = 'w-full scale-105 sm:w-sm'
         <HeroButtonIndicator fade-direction="right" class="hidden sm:block">
           <div i="carbon-chevron-right" />
         </HeroButtonIndicator>
-        <LinkCTA to="/about" :label="t('button.about')" color="primary" class="uppercase origin-right" :class="ctaClassName" />
-        <LinkCTA to="/resume" :label="t('button.resume')" color="secondary" class="uppercase origin-left" :class="ctaClassName" />
+        <LinkCTA :to="{ name: 'about', params: { locale: currentLocale } }" :label="t('button.about')" color="primary" class="uppercase origin-right" :class="ctaClassName" />
+        <LinkCTA :to="{ name: 'resume', params: { locale: currentLocale } }" :label="t('button.resume')" color="secondary" class="uppercase origin-left" :class="ctaClassName" />
         <HeroButtonIndicator fade-direction="left" class="hidden sm:block">
           <div v-for="i in 5" :key="i" i="carbon-chevron-right" />
         </HeroButtonIndicator>

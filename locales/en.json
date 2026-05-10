@@ -1,0 +1,167 @@
+{
+  "scroll": "Scroll down",
+  "button": {
+    "about": "About Me",
+    "resume": "View Resume",
+    "back": "Back",
+    "go": "GO",
+    "up-next": "Up Next",
+    "home": "Home",
+    "toggle_theme": {
+      "_label": "Toggle theme",
+      "dark": "Dark",
+      "light": "Light"
+    },
+    "toggle_lang": "Change lang"
+  },
+  "not-found": "Not found",
+  "footer": {
+    "copy": {
+      "mit": "Source code is licensed under",
+      "cc": "Assets (such as words and images) are licensed under"
+    },
+    "nav": {
+      "_label": "Navigation",
+      "home": "Homepage",
+      "about": "About",
+      "resume": "Resume"
+    }
+  },
+  "home": {
+    "section_1": {
+      "whoami": "I'm a",
+      "title": "I build idea, design, and curiosity in the form of code, and turning them into beautifully crafted products"
+    },
+    "section_2": {
+      "title": "What I've been working on recently",
+      "subtitle": "And many more"
+    }
+  },
+  "resume": {
+    "intro": "Full-stack developer with experience in web application development using frameworks such as Laravel, Next.js, and Vue 3. Capable of building interactive, responsive web applications while maximizing the user experience by ensuring optimal application performance.",
+    "sectionExperience": [
+      {
+        "companyName": "PT Botika Teknologi Indonesia",
+        "jobPosition": "Full Stack Developer",
+        "employmentStatus": "Internship",
+        "timePeriod": [
+          "July 2024",
+          "June 2025"
+        ],
+        "details": [
+          "Build the frontend interface according to the structure and format provided by the UI/UX team.",
+          "Adapting to the development process, for example: using various tools and utilities as needed for the project, and adhering to the team’s coding standards.",
+          "Use Git as a version control system (VCS) and actively contribute by following best practices for using Git."
+        ]
+      },
+      {
+        "companyName": "PT Solusi Karya Technology Indonesia",
+        "jobPosition": "Full Stack Developer",
+        "employmentStatus": "Part-Time",
+        "timePeriod": [
+          "April 2025",
+          "Present"
+        ],
+        "details": [
+          "Creating a code structure that is consistent, sustainable, and effective without limiting flexibility for other development teams.",
+          "Conduct testing to ensure that user requests and server responses align with the application workflow."
+        ]
+      }
+    ],
+    "sectionEducation": [
+      {
+        "institutionName": "SMK Negeri 2 Depok Sleman (Vocational High School)",
+        "majorName": "Network Information Systems and Applications",
+        "period": [
+          2021,
+          2025
+        ],
+        "details": [
+          "Represented at the 2024 provincial-level Student Skills Competition (LKS) in the Web Technology category and placed fifth.",
+          "Assisting in the development and improvement of school infrastructure in the area of web development."
+        ]
+      }
+    ],
+    "sectionSkill": {
+      "softSkill": [
+        "Easily adapts to new environments and technologies.",
+        "Able to identify the root cause of a problem and find effective solutions.",
+        "Effective teamwork and communication skills.",
+        "Attention to detail to ensure perfect, high-quality results."
+      ],
+      "hardSkill": {
+        "frontend": "Frontend Development",
+        "backend": "Backend Development",
+        "otherProgramming": "Other Programming",
+        "linux": "Linux Administration",
+        "ci-cd": "CI/CD"
+      }
+    },
+    "sectionProject": {
+      "personal-website": {
+        "title": "Personal Website",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+      },
+      "stage-two": {
+        "title": "GRUB Boot Loader Theme Designer",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+      },
+      "sim-web": {
+        "title": "Sistem Informasi Manajemen Sekolah",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+      }
+    }
+  },
+  "about": {
+    "title": "A full stack developer with experience in website development using various framework and libraries",
+    "subtitle": "Able to build interactive, responsive web applications, and providing optimal performance to maximize users experience",
+    "sections": [
+      {
+        "_label": "Profile",
+        "items": [
+          {
+            "title": "Identity",
+            "subtitle": [
+              "Sajid Muhammad Ikhlas",
+              "Yogyakarta, Indonesia"
+            ]
+          },
+          {
+            "title": "Capability",
+            "subtitle": [
+              "Problem Solving",
+              "Decision Making",
+              "Easy to Adapt"
+            ]
+          }
+        ]
+      },
+      {
+        "_label": "Honor",
+        "items": [
+          {
+            "title": "Kemendikdasmen",
+            "subtitle": "Regional LKS Web Technology 2024"
+          }
+        ]
+      },
+      {
+        "_label": "Social",
+        "items": [
+          {
+            "title": "Instagram",
+            "subtitle": "say1ddd"
+          },
+          {
+            "title": "LinkedIn",
+            "subtitle": "/in/sajid-ikhlas"
+          },
+          {
+            "title": "Github",
+            "subtitle": "say1ddd"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import { useInjectedSidebar } from '~/composables/useInjectedSidebar'
-import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
+import { useLocale } from '~/composables/useLocale'
 
 const isDark = useDark()
 const { t, locale } = useI18n()
+const { toggleLocale } = useLocale()
 const { isSidebarOpen, toggle: toggleSidebar } = useInjectedSidebar()
-
-async function toggleLocale() {
-  const newLocale = availableLocales[(availableLocales.indexOf(locale.value) + 1) % availableLocales.length]
-  await loadLanguageAsync(newLocale)
-  locale.value = newLocale
-}
 </script>
 
 <template>

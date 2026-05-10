@@ -1,14 +1,11 @@
 <script setup lang="ts">
-const { t } = useI18n()
+definePage({
+  name: 'redirect',
+})
+
+const router = useRouter()
+
+const { locale } = useI18n()
+
+router.replace(`/${locale.value}`)
 </script>
-
-<template>
-  <div>
-    {{ t('not-found') }}
-  </div>
-</template>
-
-<route lang="yaml">
-meta:
-  layout: 404
-</route>

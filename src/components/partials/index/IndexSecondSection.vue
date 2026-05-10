@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { useLocale } from '~/composables/useLocale'
 import { WORKS } from '~/constants'
 
+const { currentLocale } = useLocale()
 const { t } = useI18n()
 
 useHead({
@@ -20,8 +22,8 @@ const isVisible = useElementVisibility(visibilityTarget, {
       <div transition="composite" ease="out-expo" duration="1000" class="rotate-works">
         <h1>{{ t('home.section_2.title') }}</h1>
         <ul class="w-screen -translate-x-4" transition="composite" duration="300" ease="out-back">
-          <li v-for="work in WORKS" :key="work.href" class="group list-works font-extrabold uppercase from-transparent bg-linear-to-r hover:(text-black to-primary)" gap="8" border="b foreground dashed">
-            <RouterLink :to="work.href || '/not-found'" flex p="y-2" class="text-5xl items-center justify-end" gap="4" transition="composite" ease="out-expo" w="full">
+          <li v-for="work in WORKS" :key="`project-${work.label}`" class="group list-works font-extrabold uppercase from-transparent bg-linear-to-r hover:(text-black to-primary)" gap="8" border="b foreground dashed">
+            <RouterLink v-if="work.type === `link`" :to="`/${currentLocale}${work.href}`" flex p="y-2" class="text-5xl items-center justify-end" gap="4" transition="composite" ease="out-expo" w="full">
               <h1 text="7xl" transition="composite" duration="500" ease="out-expo" class="group-hover:tracking-wider group-hover:-translate-x-1/10">
                 todo
               </h1>

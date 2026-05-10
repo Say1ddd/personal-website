@@ -21,8 +21,10 @@ export default function useScrollbarWidth(
     // initial calculation
     calc()
 
-    // recalculate whenever window size or zoom level changes
-    window.addEventListener('resize', calc, false)
+    if (typeof window !== 'undefined') {
+      // recalculate whenever window size or zoom level changes
+      window.addEventListener('resize', calc, false)
+    }
 
     // recalculate whenever element size changes
     resizeObserver = new ResizeObserver(calc)
@@ -30,7 +32,9 @@ export default function useScrollbarWidth(
   })
 
   onUnmounted(() => {
-    window.removeEventListener('resize', calc)
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', calc)
+    }
     resizeObserver.disconnect()
   })
 
