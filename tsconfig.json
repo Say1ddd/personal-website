@@ -30,7 +30,8 @@
     "plugins": [
       "@vue-macros/volar/define-models",
       "@vue-macros/volar/define-slots",
-      "vue-router/volar/sfc-typed-router",
+      // causes typecheck error
+      // "vue-router/volar/sfc-typed-router",
       "vue-router/volar/sfc-route-blocks"
     ]
   },

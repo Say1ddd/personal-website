@@ -43,13 +43,11 @@ catalogs:
     nprogress: ^0.2.0
     vue: ^3.5.13
     vue-i18n: ^11.1.2
-    vue-router: ^4.5.0
+    vue-router: ^5.0.6
 
   types:
     '@types/node': ^25.4.0
     '@types/nprogress': ^0.2.3
-  conflicts_frontend_h5_0_6:
-    vue-router: ^5.0.6
 
 onlyBuiltDependencies:
   - esbuild

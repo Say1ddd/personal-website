@@ -1,0 +1,167 @@
+{
+  "scroll": "Scroll ke bawah",
+  "button": {
+    "about": "Tentang Aku",
+    "resume": "Lihat Resume",
+    "back": "Kembali",
+    "go": "Pergi",
+    "up-next": "Selanjutnya",
+    "home": "Beranda",
+    "toggle_theme": {
+      "_label": "Ubah tema",
+      "dark": "Gelap",
+      "light": "Terang"
+    },
+    "toggle_lang": "Ubah bahasa"
+  },
+  "not-found": "Tidak ditemukan",
+  "footer": {
+    "copy": {
+      "mit": "Source code dilisensikan dalam",
+      "cc": "Aset (seperti kata dan gambar) dilisensikan dalam"
+    },
+    "nav": {
+      "_label": "Navigasi",
+      "home": "Beranda",
+      "about": "Tentang",
+      "resume": "Resume"
+    }
+  },
+  "home": {
+    "section_1": {
+      "whoami": "Aku",
+      "title": "Aku mewujudkan ide, desain, dan rasa ingin tahu dalam bentuk code, dan mengubahnya menjadi produk yang sempurna"
+    },
+    "section_2": {
+      "title": "Karya yang sedang kukerjakan baru-baru ini",
+      "subtitle": "Dan masih banyak lagi"
+    }
+  },
+  "resume": {
+    "intro": "Full stack developer dengan pengalaman dalam pengembangan aplikasi web menggunakan, framework seperti Laravel, Next JS, dan Vue 3. Mampu membangun aplikasi web yang interaktif, responsif, sekaligus memaksimalkan pengalaman pengguna dengan memberikan performa aplikasi yang maksimal.",
+    "sectionExperience": [
+      {
+        "companyName": "PT Botika Teknologi Indonesia",
+        "jobPosition": "Full Stack Developer",
+        "employmentStatus": "Magang",
+        "timePeriod": [
+          "Juli 2024",
+          "Juni 2025"
+        ],
+        "details": [
+          "Membangun tampilan frontend sesuai dengan struktur dan format yang disediakan tim UI/UX.",
+          "Berimprovisasi dalam proses pengembangan, misalnya: menggunakan bermacam tools dan utility sesuai dengan kebutuhan proyek, juga mengikuti format penulisan code oleh tim.",
+          "Menggunakan Git sebagai sarana manajemen versi Version Control System (VCS) dan berkontribusi secara aktif dengan mengikuti best practice prosedur penggunaan Git."
+        ]
+      },
+      {
+        "companyName": "PT Solusi Karya Technology Indonesia",
+        "jobPosition": "Full Stack Developer",
+        "employmentStatus": "Paruh Waktu",
+        "timePeriod": [
+          "April 2025",
+          "Sekarang"
+        ],
+        "details": [
+          "Menciptakan struktur code yang konsisten, jangka panjang, dan juga efektif tanpa membatasi fleksbilitas bagi tim developer lain.",
+          "Melakukan testing untuk memastikan permintaan pengguna dan respon dari server sesuai dengan alur aplikasi."
+        ]
+      }
+    ],
+    "sectionEducation": [
+      {
+        "institutionName": "SMK Negeri 2 Depok Sleman",
+        "majorName": "Sistem Informasi Jaringan dan Aplikasi",
+        "period": [
+          2021,
+          2025
+        ],
+        "details": [
+          "Mewakili cabang Lomba Kompetensi Siswa (LKS) tingkat provinsi Daerah Istimewa Yogyakarta (DIY) tahun 2024 bidang Web Technology dan meraih peringkat ke-5.",
+          "Membantu dalam pengembangan dan perbaikan infrastruktur sekolah di bidang pengembangan website."
+        ]
+      }
+    ],
+    "sectionSkill": {
+      "softSkill": [
+        "Mudah beradaptasi terhadap lingkungan dan teknologi baru.",
+        "Mampu mencari akar penyebab suatu masalah dan cara efektif penyelesaiannya.",
+        "Keterampilan kerja sama tim dan komunikasi yang efektif.",
+        "Attention to detail untuk memastikan hasil sempurna dan berkualitas tinggi."
+      ],
+      "hardSkill": {
+        "frontend": "Pengembangan Frontend",
+        "backend": "Pengembangan Backend",
+        "otherProgramming": "Pemrograman Lain",
+        "linux": "Administrasi Linux",
+        "ci-cd": "CI/CD"
+      }
+    },
+    "sectionProject": {
+      "personal-website": {
+        "title": "Personal Website",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+      },
+      "stage-two": {
+        "title": "GRUB Boot Loader Theme Designer",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+      },
+      "sim-web": {
+        "title": "Sistem Informasi Manajemen Sekolah",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+      }
+    }
+  },
+  "about": {
+    "title": "Seorang full stack developer yang memiliki pengalaman dalam pengembangan website menggunakan berbagai macam framework dan library",
+    "subtitle": "Mampu mengembangkan aplikasi web yang interaktif, responsif, dan memberikan performa yang optimal untuk memaksimalkan pengalaman pengguna",
+    "sections": [
+      {
+        "_label": "Profil",
+        "items": [
+          {
+            "title": "Identitas",
+            "subtitle": [
+              "Sajid Muhammad Ikhlas",
+              "Yogyakarta, Indonesia"
+            ]
+          },
+          {
+            "title": "Keahlian",
+            "subtitle": [
+              "Penyelesaian Masalah",
+              "Pengambilan Keputusan",
+              "Mudah Beradaptasi"
+            ]
+          }
+        ]
+      },
+      {
+        "_label": "Penghargaan",
+        "items": [
+          {
+            "title": "Kemendikdasmen",
+            "subtitle": "LKS Web Technology Tingkat Provinsi 2024"
+          }
+        ]
+      },
+      {
+        "_label": "Sosial",
+        "items": [
+          {
+            "title": "Instagram",
+            "subtitle": "say1ddd"
+          },
+          {
+            "title": "LinkedIn",
+            "subtitle": "/in/sajid-ikhlas"
+          },
+          {
+            "title": "Github",
+            "subtitle": "say1ddd"
+          }
+        ]
+      }
+    ]
+  }
+}

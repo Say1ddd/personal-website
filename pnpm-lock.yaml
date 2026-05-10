@@ -107,6 +107,9 @@ catalogs:
     vue-i18n:
       specifier: ^11.1.2
       version: 11.3.0
+    vue-router:
+      specifier: ^5.0.6
+      version: 5.0.6
   types:
     '@types/node':
       specifier: ^25.4.0
@@ -143,7 +146,7 @@ importers:
         specifier: catalog:frontend
         version: 11.3.0(vue@3.5.30(typescript@5.9.3))
       vue-router:
-        specifier: ^5.0.6
+        specifier: catalog:frontend
         version: 5.0.6(@vue/compiler-sfc@3.5.30)(vue@3.5.30(typescript@5.9.3))
     devDependencies:
       '@antfu/eslint-config':
@@ -4603,7 +4606,7 @@ snapshots:
 
   '@babel/generator@7.29.1':
     dependencies:
-      '@babel/parser': 7.29.0
+      '@babel/parser': 7.29.3
       '@babel/types': 7.29.0
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
