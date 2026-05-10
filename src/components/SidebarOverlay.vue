@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useLocale } from '~/composables/useLocale'
+
+const { currentLocale } = useLocale()
 const { t } = useI18n()
 
 interface SocialType {
@@ -54,10 +57,10 @@ function getIconType(platform: string) {
           <div i="carbon-arrow-down" />
         </li>
         <li>
-          <LinkCTA to="/about" :replace="true" :label="t('button.about')" color="secondary" class="w-full inline-block uppercase scale-105" />
+          <LinkCTA :to="{ name: 'about', params: { locale: currentLocale } }" :replace="true" :label="t('button.about')" color="secondary" class="w-full inline-block uppercase scale-105" />
         </li>
         <li>
-          <LinkCTA to="/resume" :label="t('button.resume')" color="secondary" class="w-full inline-block uppercase scale-105" />
+          <LinkCTA :to="{ name: 'resume', params: { locale: currentLocale } }" :label="t('button.resume')" color="secondary" class="w-full inline-block uppercase scale-105" />
         </li>
       </ul>
       <div flex="~ col" gap="3">

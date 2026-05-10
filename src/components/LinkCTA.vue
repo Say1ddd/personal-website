@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router'
+
 interface Prop {
-  to: string
+  to: RouteLocationRaw
   label: string
   color?: 'primary' | 'secondary' | 'neutral'
 }
