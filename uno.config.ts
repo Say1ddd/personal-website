@@ -18,11 +18,13 @@ export default defineConfig({
     ['heading-2', 'text-xl lg:text-3xl md:text-2xl'],
     ['heading-3', 'text-lg lg:text-2xl md:text-xl'],
     ['heading-4', 'text-base lg:text-xl md:text-lg'],
-    ['section-idx', 'p-4 flex snap-(always center) h-full'],
+    ['section-idx', 'p-4 flex snap-(always center)'],
     ['absolute-overlay', 'absolute inset-0'],
     ['flex-centered', 'flex items-center justify-center'],
     ['events-none', 'pointer-events-none select-none'],
     ['wrap', 'container px-3 md:px-4'],
+    ['responsive-padding', 'px-8 sm:px-4 md:px-2'],
+    ['fullscreen-height', 'h-dvh lg:h-screen'],
   ],
   theme: {
     colors: {
@@ -59,6 +61,12 @@ export default defineConfig({
           {
             name: 'JetBrains Mono',
             weights: ['400', '800'],
+          },
+        ],
+        'archivo-black': [
+          {
+            name: 'Archivo Black',
+            weights: ['400'],
           },
         ],
         'fugaz-one': 'Fugaz One',

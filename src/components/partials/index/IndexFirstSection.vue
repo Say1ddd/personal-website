@@ -6,7 +6,7 @@ const isVisible = useElementVisibility(visibilityTarget, {
 </script>
 
 <template>
-  <section ref="sectionRef" transition="composite duration-1000 ease-out-expo" class="section-idx origin-top items-center" :class="!isVisible && `opacity-0 scale-y-50 events-none`">
+  <section ref="sectionRef" transition="composite duration-1000 ease-out-expo" class="section-idx fullscreen-height origin-top items-center" :class="!isVisible && `opacity-0 scale-y-50 events-none`">
     <div flex="~ 1 col" gap="8" overflow="hidden" class="group">
       <HeroContent :is-visible="isVisible" />
       <HeroCTA :is-visible="isVisible" />
