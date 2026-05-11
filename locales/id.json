@@ -82,33 +82,39 @@
         ]
       }
     ],
-    "sectionSkill": {
-      "softSkill": [
-        "Mudah beradaptasi terhadap lingkungan dan teknologi baru.",
-        "Mampu mencari akar penyebab suatu masalah dan cara efektif penyelesaiannya.",
-        "Keterampilan kerja sama tim dan komunikasi yang efektif.",
-        "Attention to detail untuk memastikan hasil sempurna dan berkualitas tinggi."
-      ],
-      "hardSkill": {
-        "frontend": "Pengembangan Frontend",
-        "backend": "Pengembangan Backend",
-        "otherProgramming": "Pemrograman Lain",
-        "linux": "Administrasi Linux",
-        "ci-cd": "CI/CD"
+    "sectionSkill": [
+      {
+        "title": "Kemahiran Nonteknis/Soft Skill",
+        "details": [
+          "Mudah beradaptasi terhadap lingkungan dan teknologi baru.",
+          "Mampu mencari akar penyebab suatu masalah dan cara efektif penyelesaiannya.",
+          "Keterampilan kerja sama tim dan komunikasi yang efektif.",
+          "Attention to detail untuk memastikan hasil sempurna dan berkualitas tinggi."
+        ]
+      },
+      {
+        "title": "Kemahiran Teknis/Hard Skill",
+        "details": {
+          "frontend": "Pengembangan Frontend",
+          "backend": "Pengembangan Backend",
+          "otherProgramming": "Pemrograman Lain",
+          "linux": "Administrasi Linux",
+          "ci-cd": "CI/CD"
+        }
       }
-    },
+    ],
     "sectionProject": {
       "personal-website": {
-        "title": "Personal Website",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+        "title": "Web Probadi",
+        "description": "Situs web pribadi yang dibuat untuk mengekspresikan ide dan mendokumentasikan proyek melalui pengalaman web yang interaktif. Dikembangkan sebagai platform dengan fokus pada desain yang rapi, pengalaman pengguna yang lancar, serta penyajian karya kreatif dan teknis yang baik."
       },
       "stage-two": {
-        "title": "GRUB Boot Loader Theme Designer",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+        "title": "Stage Two (web desainer interaktif untuk GRUB boot loader)",
+        "description": "Stage Two adalah pembuat tema GRUB modern berbasis browser yang digunakan untuk membuat dan memvisualisasikan tampilan bootloader GRUB secara langsung di dalam browser. Aplikasi ini sepenuhnya berjalan di sisi client, sehingga aset seperti gambar, font, dan berkas konfigurasi disimpan secara lokal di perangkat (menggunakan API IndexedDB). Ini memastikan seluruh perubahan didalam aplikasi selalu tersimpan dan dapat digunakan secara offline."
       },
       "sim-web": {
-        "title": "Sistem Informasi Manajemen Sekolah",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+        "title": "SIM Web (sistem manajemen sekolah)",
+        "description": "Aplikasi manajemen yang dibangun untuk membantu siswa dan juga guru karyawan dalam pelaksanaan sistem belajar mengajar di sekolah. Memberikan kemudahan dalam mengakses data kehadiran, pengajuan izin, program kerja lapangan, dan lain-lain. Mengaplikasikan aksi kedalam satu sistem, untuk memastikan fleksibilitas dalam akses dan rekayasa data dalam jangka panjang."
       }
     }
   },

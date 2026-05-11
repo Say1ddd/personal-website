@@ -77,38 +77,44 @@
           2025
         ],
         "details": [
-          "Represented at the 2024 provincial-level Student Skills Competition (LKS) in the Web Technology category and placed fifth.",
+          "Represented at the 2024 provincial-level Student Skills Competition (LKS) in the Web Technology category and placed 5th.",
           "Assisting in the development and improvement of school infrastructure in the area of web development."
         ]
       }
     ],
-    "sectionSkill": {
-      "softSkill": [
-        "Easily adapts to new environments and technologies.",
-        "Able to identify the root cause of a problem and find effective solutions.",
-        "Effective teamwork and communication skills.",
-        "Attention to detail to ensure perfect, high-quality results."
-      ],
-      "hardSkill": {
-        "frontend": "Frontend Development",
-        "backend": "Backend Development",
-        "otherProgramming": "Other Programming",
-        "linux": "Linux Administration",
-        "ci-cd": "CI/CD"
+    "sectionSkill": [
+      {
+        "title": "Soft Skill",
+        "details": [
+          "Easily adapts to new environments and technologies.",
+          "Able to identify the root cause of a problem and find effective solutions.",
+          "Effective teamwork and communication skills.",
+          "Attention to detail to ensure perfect, high-quality results."
+        ]
+      },
+      {
+        "title": "Technical/Hard Skill",
+        "details": {
+          "frontend": "Frontend Development",
+          "backend": "Backend Development",
+          "otherProgramming": "Other Programming",
+          "linux": "Linux Administration",
+          "ci-cd": "CI/CD"
+        }
       }
-    },
+    ],
     "sectionProject": {
       "personal-website": {
         "title": "Personal Website",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+        "description": "A personal website created to express ideas and showcase past projects through an interactive web experience. Developed as a platform with a focus on thoughtful design, a seamless user experience, and a polished presentation of creative and technical work."
       },
       "stage-two": {
-        "title": "GRUB Boot Loader Theme Designer",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+        "title": "Stage Two (interactive web designer for GRUB boot loader)",
+        "description": "Stage Two is a modern, browser-based GRUB theme builder for designing, and visualizing GRUB bootloader's look all inside browser. This runs entirely on the client side, which assets such as images, fonts, and configuration files stored locally on the machine (using IndexedDB API). This ensures all of the changes are remain persistent and is fully offline-capable."
       },
       "sim-web": {
-        "title": "Sistem Informasi Manajemen Sekolah",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi deserunt dolores ducimus eligendi eum fuga inventore, iste laboriosam maiores nam necessitatibus quos, repudiandae. Eum excepturi in quidem repellat sed?"
+        "title": "SIM Web (school management system)",
+        "description": "A management application designed to assist students, teachers, and staff in implementing the teaching and learning activities at school. It provides easy access to attendance data, leave requests, fieldwork programs, and more. Integrating actions into a single system to ensure flexibility in data access and management over the long term."
       }
     }
   },
