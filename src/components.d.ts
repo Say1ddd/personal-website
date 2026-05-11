@@ -27,6 +27,10 @@ declare module 'vue' {
     LinkCTA: typeof import('./components/LinkCTA.vue')['default']
     NavOverlay: typeof import('./components/NavOverlay.vue')['default']
     PreviousButton: typeof import('./components/partials/PreviousButton.vue')['default']
+    ResumeContentArticle: typeof import('./components/partials/resume/ResumeContentArticle.vue')['default']
+    ResumeContentList: typeof import('./components/partials/resume/ResumeContentList.vue')['default']
+    ResumeHeader: typeof import('./components/partials/resume/ResumeHeader.vue')['default']
+    ResumeSection: typeof import('./components/partials/resume/ResumeSection.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollIndicator: typeof import('./components/partials/ScrollIndicator.vue')['default']
@@ -34,10 +38,5 @@ declare module 'vue' {
     SocialCard: typeof import('./components/partials/about/SocialCard.vue')['default']
     SocialLink: typeof import('./components/partials/about/SocialLink.vue')['default']
     ToggleButton: typeof import('./components/partials/ToggleButton.vue')['default']
-    WorkSectionHero: typeof import('./components/partials/work/WorkSectionHero.vue')['default']
-    WorkSectionImage: typeof import('./components/partials/work/WorkSectionImage.vue')['default']
-    WorkSectionNext: typeof import('./components/partials/work/WorkSectionNext.vue')['default']
-    WorkSectionQuote: typeof import('./components/partials/work/WorkSectionQuote.vue')['default']
-    WorkSectionText: typeof import('./components/partials/work/WorkSectionText.vue')['default']
   }
 }
