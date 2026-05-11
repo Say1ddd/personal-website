@@ -24,7 +24,7 @@ onMounted(() => setScrollbarWidth(scrollbarWidth.value))
 </script>
 
 <template>
-  <div ref="scrollRef" class="relative" overflow="x-hidden y-auto" h="full" snap="y mandatory">
+  <div ref="scrollRef" class="relative" overflow="x-hidden y-auto" h="lvh" snap="y mandatory">
     <ScrollIndicator />
     <IndexFirstSection />
     <IndexSecondSection />

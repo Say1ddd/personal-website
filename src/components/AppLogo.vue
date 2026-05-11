@@ -5,7 +5,7 @@ import { useLocale } from '~/composables/useLocale'
 
 const { currentLocale } = useLocale()
 
-const { isOnTop, isOnBottom } = useInjectedScroll()
+const { isOnTop, isOnBottom, isScrolling } = useInjectedScroll()
 const { isSidebarOpen } = useInjectedSidebar()
 
 const notTopBottom = computed(() => {
@@ -26,7 +26,7 @@ const onLgBreakpoint = computed(() => {
 </script>
 
 <template>
-  <RouterLink :to="{ name: 'home', params: { locale: currentLocale } }" pointer-events="auto" select="none" class="swipe" :class="onLgBreakpoint || isSidebarOpen ? `scale-90 sm:scale-100 lg:scale-80` : `*:scale-125 *:sm:scale-100 to-bottom`">
+  <RouterLink :inert="isScrolling" :to="{ name: 'home', params: { locale: currentLocale } }" pointer-events="auto" select="none" class="swipe" :class="onLgBreakpoint || isSidebarOpen ? `scale-90 sm:scale-100 lg:scale-80` : `*:scale-125 *:sm:scale-100 to-bottom`">
     <h1 :data-scrolled="onLgBreakpoint" aria-label="SIkhlas" aria-description="Sajid Ikhlas Personal Website Title Logo" truncate tracking="wider" transition="composite" font="extralight" text="3xl sm:5xl nowrap" select="none" class="title">
       <span>S<span tracking="widest" class="widen">I</span>k</span>hlas
     </h1>
