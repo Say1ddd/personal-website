@@ -54,7 +54,7 @@ provide(isSidebarOpenKey, isSidebarOpen)
 <template>
   <div>
     <!-- top overlay -->
-    <div flex="~ col" w="full" fixed z="30" top="0" pointer-events="none">
+    <div flex="~ col" w="full" fixed z="30" top="0" pointer-events="none" print="hidden">
       <div m="x-4" p="y-2 x-4" class="translate-y-4">
         <NavOverlay>
           <template #left>
@@ -78,14 +78,14 @@ provide(isSidebarOpenKey, isSidebarOpen)
     </div>
 
     <!-- sidebar overlay -->
-    <SidebarOverlay transition="composite duration-500 ease-out-expo" :class="!isSidebarOpen && `translate-x-full events-none opacity-0`" />
+    <SidebarOverlay transition="composite duration-500 ease-out-expo" :class="!isSidebarOpen && `translate-x-full events-none opacity-0`" print="hidden" />
     <!-- dismiss overlay -->
     <Transition mode="out-in" name="fade">
-      <div v-show="isSidebarOpen" absolute z="20" class="bg-black/50 inset-0" @click="isSidebarOpen = false" />
+      <div v-show="isSidebarOpen" absolute z="20" class="bg-black/50 inset-0" print="hidden" @click="isSidebarOpen = false" />
     </Transition>
 
     <!-- content -->
-    <main :inert="isSidebarOpen" h="dvh lg:screen *:full" overflow="hidden" z="1" relative class="min-w-0">
+    <main :inert="isSidebarOpen" print="w-auto h-auto overflow-auto perspective-0" z="1" relative class="min-w-0 perspective-[1000px]">
       <RouterView v-slot="{ Component, route: r }">
         <Transition name="fade-reveal" mode="out-in" @after-enter="measure">
           <component :is="Component" ref="scrollRef" :key="r.path" />
@@ -94,7 +94,7 @@ provide(isSidebarOpenKey, isSidebarOpen)
     </main>
 
     <!-- bottom overlay -->
-    <div bottom="0" fixed pointer-events="none" w="full" z="25">
+    <div bottom="0" fixed pointer-events="none" w="full" z="25" print="hidden">
       <div :data-open="isOnBottom && !isSidebarOpen" translate-y="-4" flex="~ col" gap="4 sm:0" class="footer-background">
         <HeaderOverlay :inert="isSidebarOpen" lowercase relative z="10" m="x-4" p="x-0 sm:x-4" />
         <FooterOverlay relative z="10" transition="composite" duration="300" ease="out-back" m="sm:(x-4 y-0)" p="sm:x-4" :class="!isOnBottom ? `mx-4 p-2 sm:px-4 opacity-50 hover:opacity-75` : `mx-2 opacity-75 translate-y-2`" />
@@ -102,11 +102,9 @@ provide(isSidebarOpenKey, isSidebarOpen)
     </div>
 
     <!-- decor -->
-    <div aria-hidden="true" inset-0 fixed z="0" flex="~ col" pointer-events="none" transition="composite" duration="1000">
-      <Transition name="slide-down" mode="out-in">
-        <LayoutDivider v-show="isHome" border="before:foreground/25 after:foreground/25 *:foreground/25" />
-      </Transition>
-      <Transition name="minimize" mode="out-in">
+    <div aria-hidden="true" inset-0 fixed z="0" flex="~ col" pointer-events="none" transition="composite" duration="1000" print="hidden">
+      <LayoutDivider :class="!isHome && `opacity-0 -translate-y-full`" border="before:foreground/25 after:foreground/25 *:foreground/25" />
+      <Transition name="fade" mode="out-in">
         <LayoutDivider
           v-show="isHome"
           border="before:foreground/25 after:foreground/25 *:foreground/25 *:t-none"

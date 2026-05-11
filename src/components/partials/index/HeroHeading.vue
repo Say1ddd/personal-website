@@ -13,7 +13,7 @@ const { t } = useI18n()
       </div>
       <div aria-hidden="true" m="lg:r-4" absolute top="0" right="0" overflow="hidden" transition="composite" duration="1000" ease="in-out-circ" class="events-none group-hover:skew-x-0 md:skew-x-90">
         <span text="4xl sm:5xl md:6xl lg:7xl nowrap" font="black" class="pattern-text">
-          <span class="hidden xl:inline">
+          <span font="archivo-black" class="hidden xl:inline">
             COMPOSITOR-ONLY
           </span>
           <span class="xl:hidden">

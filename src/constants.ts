@@ -1,6 +1,8 @@
 // @unocss-include
 import type { LabelItem, Stack } from '~/types'
 
+const PROJECTS_CONST = ['personal-website', 'stage-two', 'sim-web'] as const
+
 const HEADER: LabelItem[][][] = [
   [
     [
@@ -191,6 +193,7 @@ const STACKS: Stack = {
 
 export {
   HEADER,
+  PROJECTS_CONST,
   STACKS,
   WORKS,
 }

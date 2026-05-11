@@ -12,7 +12,7 @@ function calculateDurationByIdx(idx: number, secMultiplier = 100, initialSec = 3
 </script>
 
 <template>
-  <section ref="sectionRef" transition="composite" duration="500" ease="inoutquint" origin="right" class="section-idx" :class="!isVisible && `opacity-0 scale-x-75`">
+  <section ref="sectionRef" transition="composite" duration="500" ease="inoutquint" origin="right" class="section-idx fullscreen-height" :class="!isVisible && `opacity-0 scale-x-75`">
     <div flex="~ col 1" p="t-16 sm:t-12 lg:4" class="lg:justify-center">
       <div m="x-auto" flex="~ col lg:row" container>
         <div class="max-w-6xl">
