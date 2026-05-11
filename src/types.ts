@@ -1,5 +1,6 @@
 import type { ViteSSGContext } from 'vite-ssg'
 import type { RouteRecordName } from 'vue-router'
+import type { PROJECTS_CONST } from '~/constants'
 import type { SupportLocales } from '~/i18n'
 
 type UserModule = (ctx: ViteSSGContext) => void
@@ -7,6 +8,8 @@ type UserModule = (ctx: ViteSSGContext) => void
 interface LocaleRouteParams {
   locale: SupportLocales
 }
+
+type Project = typeof PROJECTS_CONST[number]
 
 type Paragraph = string | string[]
 
@@ -69,6 +72,7 @@ export type {
   LabelItem,
   LocaleRouteParams,
   Paragraph,
+  Project,
   ProjectIntro,
   ProjectMeta,
   Stack,
